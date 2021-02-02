@@ -33,18 +33,14 @@ module.exports = {
         loader: 'html-loader',
       },
       {
+        test: /\.ts?$/,
+        use: ['babel-loader']
+      },
+      {
         test: /\.tsx$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [
-              ["@babel/plugin-transform-react-jsx", {
-                "pragma": "h",
-                "pragmaFrag": "Fragment",
-              }]
-            ]
-          }
+          loader: 'babel-loader'
         }
       }
     ],
