@@ -31,7 +31,8 @@ export interface StepAction {
 }
 
 const SPEARKER = {
-    YOU: 'Vous'
+    YOU: 'Vous',
+    TABLEAU1: 'Brigitte'
 }
 
 const App = () => {
@@ -144,7 +145,13 @@ const App = () => {
         'c1': {
             type: 'dialog', background: '4', dialog: {
                 text: 'Qui sommes nous ? Seulement deux êtres, épris l’un de l’autre.',
-                speaker: SPEARKER.YOU
+                speaker: SPEARKER.TABLEAU1
+            }, 
+        },
+        'c2': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'Nous sommes dans ce tableau depuis 1878, c’est Henri GERVEX qui nous a imaginé et peint',
+                speaker: SPEARKER.TABLEAU1
             }, 
             goTostep: '12'
         }
