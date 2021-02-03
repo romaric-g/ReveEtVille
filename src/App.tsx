@@ -1,6 +1,6 @@
 import { render, h } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
-import './scss/App.scss';
+import './scss/app.scss';
 import Home from './components/Home';
 import Step from './components/Step';
 import Cursor from './components/Cursor'
