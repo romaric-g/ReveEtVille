@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 .Step {
+
     &__background {
         position: relative;
         height: 100vh;
@@ -29,6 +30,10 @@
         left: 0;
         right: 0;
         bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
     }
 
     &__dialog {
@@ -51,6 +56,40 @@
             font-size: 24px;
             font-weight: 400;
             margin: 0;
+        }
+    }
+
+    &__chooses {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80%;
+
+        &__option {
+            font-family: 'Rasa', sans-serif;
+            background-color: rgba(0,0,0,0);
+            box-shadow: none;
+            border: none;
+            font-size: 48px;
+            color: white;
+            transition-duration: 0.5s;
+            max-width: 800px;
+            margin: 0 auto;
+
+            &:hover {
+                transform: scale(1.25);
+                max-width: 850px;
+                font-weight: bold;
+            }
+
+            &:focus {
+                outline: 0px solid #fff;
+                outline-offset: -4px;
+                border: none;
+                border-color: rgba(0,0,0,0);
+                box-shadow: none;
+                text-decoration: underline;
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
 import { render, h } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
+import './scss/App.scss';
 import Home from './components/Home';
 import Step from './components/Step';
+import Cursor from './components/Cursor'
 
 export interface StepInfo {
     type: 'dialog' | 'choose' | 'interact', 
@@ -170,7 +172,7 @@ const App = () => {
         console.log(action)
         console.log(currentStep)
         if (!currentStep) {
-            if (action.type === 'start') setCurrentStepID('1')
+            if (action.type === 'start') setCurrentStepID('12')
             return;
         }
         if (currentStep.type === 'choose' && action.type  === 'choose') {
@@ -200,9 +202,9 @@ const App = () => {
     }, [currentStep])
 
     return (
-        <div>
+        <div class="App">
+            <Cursor />
             { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : <Step stepInfo={steps[currentStepID]} next={next} backgrounds={backgrounds} /> }
-            
         </div>
     )
 }

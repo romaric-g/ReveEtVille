@@ -1,0 +1,11 @@
+
+
+.Cursor {
+    z-index: 140;
+    pointer-events: none;
+    position: absolute;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

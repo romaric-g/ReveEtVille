@@ -32,13 +32,13 @@ const Step = (props: Props) => {
                         </div>
                     ) }
                     { stepInfo.type === 'choose' && (
-                        stepInfo.choose.map((choose, index) => (
-                            <div className="Step__choose">
-                                <p>{ choose.text }</p>
-                                <p>Next: { choose.goTostep }</p>
-                                <button onClick={() => next({type: 'choose', choose: index})}>Choose it</button>
-                            </div>
-                        ))
+                        <div className="Step__chooses">
+                            {
+                                stepInfo.choose.map((choose, index) => (
+                                    <button className="Step__chooses__option cursor--follow-h" onClick={() => next({type: 'choose', choose: index})}>{ choose.text }</button>
+                                ))
+                            }
+                        </div>
                     )}
                     { stepInfo.type === 'interact' && (
                         <button onClick={() => next({type: 'interact'})}>{stepInfo.interact.text}</button>
