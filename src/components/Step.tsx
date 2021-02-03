@@ -3,6 +3,7 @@ import './../scss/step.scss';
 
 import { StepAction, StepInfo } from  './../App';
 import { useMemo } from 'preact/hooks';
+import Background from './Background';
 
 interface Props {
     stepInfo: StepInfo,
@@ -20,9 +21,7 @@ const Step = (props: Props) => {
     if (stepInfo) {
         return (
             <div className="Step">
-                <div className="Step__background">
-                    <img className="Step__background__image" src={backgrounds[stepInfo.background]} alt=""/>
-                </div>
+                <Background background={backgrounds[stepInfo.background]}/>
                 <div className="Step__container">
                     { stepInfo.type === 'dialog' && (
                         <div className="Step__dialog">
@@ -35,7 +34,7 @@ const Step = (props: Props) => {
                         <div className="Step__chooses">
                             {
                                 stepInfo.choose.map((choose, index) => (
-                                    <button className="Step__chooses__option cursor--follow-h" onClick={() => next({type: 'choose', choose: index})}>{ choose.text }</button>
+                                    <button className="Step__chooses__option cursor--hover cursor--follow-h" onClick={() => next({type: 'choose', choose: index})}>{ choose.text }</button>
                                 ))
                             }
                         </div>

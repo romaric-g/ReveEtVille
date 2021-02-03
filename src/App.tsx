@@ -172,7 +172,7 @@ const App = () => {
         console.log(action)
         console.log(currentStep)
         if (!currentStep) {
-            if (action.type === 'start') setCurrentStepID('12')
+            if (action.type === 'start') setCurrentStepID('1')
             return;
         }
         if (currentStep.type === 'choose' && action.type  === 'choose') {

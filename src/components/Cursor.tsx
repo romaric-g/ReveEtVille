@@ -7,6 +7,7 @@ const body = document.body;
 const Cursor = () => {
 
     const [ mousePosition, setMousePosition ] = useState<{ x: number, y: number, size: number }>({ x: 0, y: 0, size: 100})
+    
     const onMouseMove = useCallback((e) => {
         const target = (e.target);
         if(target) {
