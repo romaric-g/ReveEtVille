@@ -1,12 +1,17 @@
-intro: No memory, I open one eye and then two, my head hurts. 
-What am I doing here? Everything is dark around me, the room looks huge. 
-Everything looks familiar but I've never been here. 
+intro1: No memory, I open one eye and then two, my head hurts. 
+intro2: What am I doing here? Everything is dark around me, the room looks huge. 
+intro3: Everything looks familiar but I've never been here. 
 I think I'm in a museum. 
-But what happened to this painting? Why is it torn? 
+intro4: But what happened to this painting? Why is it torn? 
 It looks like something is missing. The poor frightened-looking woman, what was going on? 
-Who put her in this state ? All is well...Lucrèce ? 
+intro5: Who put her in this state ? All is well...Lucrèce ? 
 Strange...maybe she's too shocked to answer me ? 
-Maybe the other works could help me to see more clearly ? 
+intro6: Maybe the other works could help me to see more clearly ? 
+
+#transition 
+
+t1: See museum
+t2: Go to the first painting
 
 #debut-oeuvre1
 o1moi1: Good evening, can you hear me?
@@ -40,6 +45,11 @@ o1moi4: Yes, I think my mission here is to find out who could have done such a h
 o1o5: You should go and see the work next door, there are many of them, perhaps they will know more than the two of us.
 o1moi5: Thank you for the information you have given me.
 
+#transition 
+
+t3: See museum
+t4: Go to the second painting
+
 #debut-oeuvre2
 o2moi1: Excuse me, I was told to come here to talk to you...
 o2o1: Let me guess... the two flatterers next door sent you here?
@@ -60,11 +70,11 @@ o2c1o8.2: And screams too.
 o2c1o8.3: But no door noises.
 o2c1o8.4: Nothing like that.
 o2c1o8.5: At the sound of the tearing the screams fell silent.
-o2c1o8.6: Tearing ? Of the painting ?
-o2c1o8.7: Of the painting or of the heart, who knows...
-o2c1o8.8: He is still with us.
-o2c1moi4.2: But who are you talking about ?
-o2c1o8.9: The person who is hurting Lucretia. She hasn't left the museum, we are all sure of that, she hid among us. Find her !
+o2c1moi4.2: Tearing ? Of the painting ?
+o2c1o8.6: Of the painting or of the heart, who knows...
+o2c1o8.7: He is still with us.
+o2c1moi4.3: But who are you talking about ?
+o2c1o8.8: The person who is hurting Lucretia. She hasn't left the museum, we are all sure of that, she hid among us. Find her !
 
 #oeuvre2-choix2
 o2c2moi4: Maybe you can help me. Do you know what I'm doing here? 

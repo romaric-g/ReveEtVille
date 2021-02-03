@@ -1,12 +1,17 @@
-intro: Aucun souvenir, j’ouvre un œil puis deux, ma tête me fait mal. 
-intro-1: Qu’est-ce que je fais là ? Tout est sombre autour de moi, la pièce à l’air immense.
-intro-2: Tout m’a l’air familier mais je ne suis jamais venu ici
+intro1: Aucun souvenir, j’ouvre un œil puis deux, ma tête me fait mal. 
+intro2: Qu’est-ce que je fais là ? Tout est sombre autour de moi, la pièce à l’air immense.
+intro3: Tout m’a l’air familier mais je ne suis jamais venu ici;
 Je crois que je suis dans un musée. Mais qu’est-il arrivé à ce tableau ? 
-Pourquoi est-il déchiré? On dirait qu’il manque quelque chose. 
-La pauvre femme à l’air appeurée, qu’était-il en train de se
+intro4: Pourquoi est-il déchiré? On dirait qu’il manque quelque chose. 
+intro5: La pauvre femme à l’air appeurée, qu’était-il en train de se
 passer ? Qui l’a mise dans cet état ? Tout va bien...Lucrèce ? 
-Étrange... peut-être est-elle trop choquée pour me répondre ?
+intro6: Étrange... peut-être est-elle trop choquée pour me répondre ?
 Peut-être que les autres œuvres pourraient m’aider à y voir plus clair ?
+
+#transition 
+
+t1: Voir le musée
+t2: Se déplacer vers la première oeuvre
 
 #debut-oeuvre1
 o1moi1: Bonsoir, vous m’entendez ?
@@ -32,13 +37,20 @@ o1c2o3.4: Alors cela se reproduira..
 
 #oeuvre1-choix3
 o1c3moi3: Mais qui êtes vous ?
-o1c3o3: Qui sommes nous ? Seulement deux êtres, épris l’un de l’autre. Nous sommes dans ce tableau depuis 1878, c’est Henri GERVEX qui nous a imaginé et peint depuis, nous vivons heureux tous les deux, comme notre peintre l’a décidé.
+o1c3o3: Qui sommes nous ? Seulement deux êtres, épris l’un de l’autre. 
+o1c3o3.2: Nous sommes dans ce tableau depuis 1878, c’est Henri GERVEX qui nous peint en s’inspirant d’un poème. Depuis, nous vivons heureux tous les deux, comme notre peintre l’a décidé.
 
 #fin-oeuvre1
 o1o4: Vous allez chercher qui a commis ce délit ?
 o1moi4: Oui je crois bien que ma mission ici est de trouver qui à pu faire une horreur pareil 
 o1o5: Vous devriez aller voir l'œuvre d’à côté, ils sont nombreux peut-être qu’ils en sauront plus que nous deux.
 o1moi5: Je vous remercie pour les informations que vous m’avez données.
+
+#transition 
+
+t3: Voir le musée
+t4: Se déplacer vers la deuxième oeuvre
+
 
 #debut-oeuvre2
 o2moi1: Excusez-moi, on m’a dit de venir vous parlez
@@ -60,11 +72,11 @@ o2c1o8.2: Et des cris aussi.
 o2c1o8.3: Mais pas de bruits de porte.
 o2c1o8.4: Non rien de la sorte.
 o2c1o8.5: Au son du déchirement les hurlements se sont tus.
-o2c1o8.6: Le déchirement ? Du tableau ?
-o2c1o8.7: Du tableau ou du cœur qui sait..
-o2c1o8.8: Il est encore parmi nous.
-o2c1moi4.2: Mais de qui parlez-vous ?
-o2c1o8.9: De la personne qui fait du mal à Lucrèce. Elle n’est pas partie du musée nous en sommes tous sûr, elle s’est cachée parmi nous. Trouvez la !
+o2c1moi4.2: Le déchirement ? Du tableau ?
+o2c1o8.6: Du tableau ou du cœur qui sait..
+o2c1o8.7: Il est encore parmi nous.
+o2c1moi4.3: Mais de qui parlez-vous ?
+o2c1o8.8: De la personne qui fait du mal à Lucrèce. Elle n’est pas partie du musée nous en sommes tous sûr, elle s’est cachée parmi nous. Trouvez la !
 
 #oeuvre2-choix2
 o2c2moi4: Peut-être que vous pouvez m’aider. Savez vous ce que je peux bien faire ici ? 
