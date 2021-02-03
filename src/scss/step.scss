@@ -41,22 +41,24 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        height: 80%;
+        height: 100%;
+        padding: 10% 0;
+        background-color: rgba(0,0,0,0.7);
 
         &__option {
             font-family: 'Rasa', sans-serif;
             background-color: rgba(0,0,0,0);
             box-shadow: none;
             border: none;
-            font-size: 48px;
+            font-size: 44px;
             color: white;
             transition-duration: 0.5s;
             max-width: 800px;
             margin: 0 auto;
 
             &:hover {
-                transform: scale(1.25);
-                max-width: 850px;
+                transform: scale(1.2);
+                max-width: 840px;
                 font-weight: bold;
             }
 
