@@ -58,15 +58,13 @@ const App = () => {
             type: 'dialog', background: '0', dialog: {
                 text: 'intro1',
                 speaker: SPEARKER.YOU
-            },
-            audio: 'ambiance_1'
+            }
         },
         '2': {
             type: 'dialog', background: '0', dialog: {
                 text: 'intro2',
                 speaker: SPEARKER.YOU
-            },
-            audio: 'ambiance_2'
+            }
         },
         '3': {
             type: 'dialog', background: '0', dialog: {
@@ -102,25 +100,29 @@ const App = () => {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1moi1',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
         '10': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1o1',
                 speaker: SPEARKER.TABLEAU1_1
-            }
+            },
+            audio: 'ambiance_1'
         },
         '11': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1moi2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
         '12': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1o2',
                 speaker: SPEARKER.TABLEAU1_1
-            }
+            },
+            audio: 'ambiance_1'
         },
         '13': {
             type: 'choose', background: '3', choose: [
@@ -136,26 +138,31 @@ const App = () => {
                     text: 'o1c3moi3',
                     goTostep: 'c1'
                 },
-            ]
+            ], 
+            audio: 'ambiance_1'
+
         },
         // RÉPONSE 1
         'a1': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c1moi3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
         'a2': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c1o3',
                 speaker: SPEARKER.TABLEAU1_2
-            }
+            },
+            audio: 'ambiance_1'
         },
         'a3': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c1moi3.2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'a4': {
@@ -163,7 +170,8 @@ const App = () => {
                 text: 'o1c1o3.2',
                 speaker: SPEARKER.TABLEAU1_2
             },
-            goTostep: '13'
+            goTostep: '13',
+            audio: 'ambiance_1'
         },
 
         // RÉPONSE 2
@@ -171,49 +179,56 @@ const App = () => {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2moi3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b2': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2o3',
                 speaker: SPEARKER.TABLEAU1_1
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b3': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2moi3.2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b4': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2o3.2',
                 speaker: SPEARKER.TABLEAU1_2
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b5': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2moi3.3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b6': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2o3.3',
                 speaker: SPEARKER.TABLEAU1_1
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b7': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c2moi3.4',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
 
         'b8': {
@@ -221,7 +236,8 @@ const App = () => {
                 text: 'o1c2o3.4',
                 speaker: SPEARKER.TABLEAU1_1
             }, 
-            goTostep: '14'
+            goTostep: '14',
+            audio: 'ambiance_1'
         },
 
        
@@ -230,45 +246,52 @@ const App = () => {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c3moi3',
                 speaker: SPEARKER.YOU
-            }, 
+            },
+            audio: 'ambiance_1'
         },
         'c2': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c3o3',
                 speaker: SPEARKER.TABLEAU1_2
-            }, 
+            },
+            audio: 'ambiance_1' 
         },
         'c3': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1c3o3.2',
                 speaker: SPEARKER.TABLEAU1_2
             }, 
-            goTostep: '13'
+            goTostep: '13',
+            audio: 'ambiance_1'
         },
 
         '14': {
             type: 'dialog', background: '3', dialog: {
-                text: 'io1o4',
+                text: 'o1o4',
                 speaker: SPEARKER.TABLEAU1_1
-            }
+            },
+            audio: 'ambiance_1'
         },
         '15': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1moi4',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
         '16': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1o5',
                 speaker: SPEARKER.TABLEAU1_1
-            }
+            },
+            audio: 'ambiance_1'
         },
         '17': {
             type: 'dialog', background: '3', dialog: {
                 text: 'o1moi5',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
         '18': {
             type: 'interact', background: '3', interact: { text: 't3' }
@@ -282,64 +305,72 @@ const App = () => {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2moi1',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         '21': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o1',
                 speaker: SPEARKER.TABLEAU2_1
-            }
+            },
+            audio: 'ambiance_2'
         },
         '22': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2moi2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         '23': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o2',
                 speaker: SPEARKER.TABLEAU2_2
-            }
+            },
+            audio: 'ambiance_2'
         },
-
         '24': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o3',
                 speaker: SPEARKER.TABLEAU2_3
-            }
+            },
+            audio: 'ambiance_2'
         },
         '25': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o4',
                 speaker: SPEARKER.TABLEAU2_1
-            }
+            },
+            audio: 'ambiance_2'
         },
         '26': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o5',
                 speaker: SPEARKER.TABLEAU2_4
-            }
+            },
+            audio: 'ambiance_2'
         },
         '27': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o6',
                 speaker: SPEARKER.TABLEAU2_2
-            }
+            },
+            audio: 'ambiance_2'
         },
         '28': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2o7',
                 speaker: SPEARKER.TABLEAU2_4
-            }
+            },
+            audio: 'ambiance_2'
         },
         '29': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2moi3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
-
         '30': {
             type: 'choose', background: '2', choose: [
                 {
@@ -354,7 +385,8 @@ const App = () => {
                     text: 'o2c3moi4',
                     goTostep: 'f1'
                 },
-            ]
+            ],
+            audio: 'ambiance_2'
         },
 
         // RÉPONSE 1
@@ -362,70 +394,81 @@ const App = () => {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1moi4',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd2': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8',
                 speaker: SPEARKER.TABLEAU2_2
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd3': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.2',
                 speaker: SPEARKER.TABLEAU2_3
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd4': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.3',
                 speaker: SPEARKER.TABLEAU2_1
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd5': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.4',
                 speaker: SPEARKER.TABLEAU2_3
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd6': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.5',
                 speaker: SPEARKER.TABLEAU2_2
-            }
+            },
+            audio: 'ambiance_2'
         },
 
         'd7': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1moi4.2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
 
         'd8': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.6',
                 speaker: SPEARKER.TABLEAU2_4
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd9': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.7',
                 speaker: SPEARKER.TABLEAU2_1
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd10': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1moi4.3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         'd11': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c1o8.8',
                 speaker: SPEARKER.TABLEAU2_1
             },
-            goTostep: '31'
+            goTostep: '31',
+            audio:'ambiance_2'
         },
 
         // RÉPONSE 2
@@ -433,32 +476,37 @@ const App = () => {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c2moi4',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         'e2': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c2o8',
                 speaker: SPEARKER.TABLEAU2_1
-            }
+            },
+            audio: 'ambiance_2'
         },
         'e3': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c2moi4.2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         'e4': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c2o8.2',
                 speaker: SPEARKER.TABLEAU2_4
-            }
+            },
+            audio: 'ambiance_2'
         },
         'e5': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c2o8.3',
                 speaker: SPEARKER.TABLEAU2_2
             },
-            goTostep: '30'
+            goTostep: '30',
+            audio: 'ambiance_2'
         },
 
         // RÉPONSE 3
@@ -466,46 +514,53 @@ const App = () => {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c3moi4',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         'f2': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c3o8',
                 speaker: SPEARKER.TABLEAU2_2
-            }
+            },
+            audio: 'ambiance_2'
         },
         'f4': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c3o8.2',
                 speaker: SPEARKER.TABLEAU2_1
-            }
+            },
+            audio: 'ambiance_2'
         },
         'f5': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c3o8.3',
                 speaker: SPEARKER.TABLEAU2_4
-            }
+            },
+            audio: 'ambiance_2'
         },
 
         'f6': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c3moi4.2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         'f7': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2c3o8.4',
                 speaker: SPEARKER.TABLEAU2_4
             },
-            goTostep: '30'
+            goTostep: '30',
+            audio: 'ambiance_2'
         },
 
         '31': {
             type: 'dialog', background: '2', dialog: {
                 text: 'o2moi5',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         '32': {
             type: 'dialog', background: '2', dialog: {
@@ -513,7 +568,6 @@ const App = () => {
                 speaker: SPEARKER.TABLEAU3
             }
         },
-
         '33': {
             type: 'interact', background: '2', interact: { text: 't6' }
         },
@@ -525,31 +579,36 @@ const App = () => {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o1',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '36': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3moi1',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         '37': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o2',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '39': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3moi2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         '40': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o3',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '41': {
             type: 'choose', background: '4', choose: [
@@ -561,7 +620,8 @@ const App = () => {
                     text: 'o3c2moi3',
                     goTostep: 'h1'
                 },
-            ]
+            ],
+            audio:'ambiance_3'
         },
 
          // RÉPONSE 1
@@ -569,14 +629,16 @@ const App = () => {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3c1moi3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         'g2': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3c1o4',
                 speaker: SPEARKER.TABLEAU2_1
             },
-            goTostep: '42'
+            goTostep: '42',
+            audio: 'ambiance_3'
         },
 
         // RÉPONSE 2
@@ -584,83 +646,95 @@ const App = () => {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3c2moi3',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         'h2': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3c2o4',
                 speaker: SPEARKER.TABLEAU2_1
             },
-            goTostep: '41'
+            goTostep: '41',
+            audio: 'ambiance_3'
         },
 
         '42': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o5',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '43': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3moi4',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         '44': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o6',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '45': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3moi5',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         '46': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o7',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '47': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3moi6',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         '48': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3o8',
                 speaker: SPEARKER.TABLEAU3_1
-            }
+            },
+            audio: 'ambiance_3'
         },
         '49': {
             type: 'dialog', background: '4', dialog: {
                 text: 'o3moi7',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_3'
         },
         '50': {
             type: 'dialog', background: '5', dialog: {
                 text: 'o3moi8',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'suspens'
         },
         '51': {
             type: 'dialog', background: '6', dialog: {
                 text: 'o3moi9',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'suspens'
         },
         '52': {
             type: 'dialog', background: '7', dialog: {
                 text: 'o3moi10',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'suspens'
         },
-
         '53': {
             type: 'choose', background: '5', choose: [
                 {
@@ -671,7 +745,8 @@ const App = () => {
                     text: 'c2n1',
                     goTostep: 'j1'
                 },
-            ]
+            ],
+            audio:'suspens'
         },
 
          // FIN 1
