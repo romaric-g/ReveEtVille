@@ -38,7 +38,8 @@ const SPEARKER = {
     TABLEAU2_2: 'Une nymphe',
     TABLEAU2_3: 'Triton',
     TABLEAU2_4: 'Vénus',
-
+    TABLEAU3: 'Voix inconnue au loin',
+    TABLEAU3_1:'Sénateur Orsini'
 }
 
 const App = () => {
@@ -491,13 +492,193 @@ const App = () => {
             goTostep: '30'
         },
 
+        '31': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2moi5',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '32': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o209',
+                speaker: SPEARKER.TABLEAU3
+            }
+        },
 
+        '33': {
+            type: 'interact', background: '2', interact: { text: 't6' }
+        },
 
+        '34': {
+            type: 'interact', background: '1', interact: { text: 't7' }
+        },
+        '35': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o1',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '36': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi1',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '37': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o2',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '39': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '40': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o3',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '41': {
+            type: 'choose', background: '4', choose: [
+                {
+                    text: 'o3c1moi3',
+                    goTostep: 'g1'
+                },
+                {
+                    text: 'o3c2moi3',
+                    goTostep: 'h1'
+                },
+            ]
+        },
 
+         // RÉPONSE 1
+         'g1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c1moi3',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'g2': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c1o4',
+                speaker: SPEARKER.TABLEAU2_1
+            },
+            goTostep: '42'
+        },
 
-       
+        // RÉPONSE 2
+        'h1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c2moi3',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'h2': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c2o4',
+                speaker: SPEARKER.TABLEAU2_1
+            },
+            goTostep: '41'
+        },
 
+        '42': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o5',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '43': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi4',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '44': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o6',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '45': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi5',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '46': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o7',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '47': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi6',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '48': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o8',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '49': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi7',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '50': {
+            type: 'dialog', background: '5', dialog: {
+                text: 'o3moi8',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '51': {
+            type: 'dialog', background: '6', dialog: {
+                text: 'o3moi9',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '52': {
+            type: 'dialog', background: '7', dialog: {
+                text: 'o3moi10',
+                speaker: SPEARKER.YOU
+            }
+        },
 
+        '53': {
+            type: 'choose', background: '5', choose: [
+                {
+                    text: 'c1n1',
+                    goTostep: 'i1'
+                },
+                {
+                    text: 'c2n1',
+                    goTostep: 'j1'
+                },
+            ]
+        },
+
+         // FIN 1
+         'i1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'c1n2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        // FIN 2
+        'j1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'c2n2',
+                speaker: SPEARKER.YOU
+            }
+        },
     }
     
     const backgrounds = useMemo(() => ({
@@ -506,6 +687,9 @@ const App = () => {
         '2': require('./assets/plates/plate2.png'),
         '3': require('./assets/plates/plate3.png'), 
         '4': require('./assets/plates/plate4.png'),
+        '5': require('./assets/plates/prisedetête.png'), 
+        '6': require('./assets/plates/têtegauche.png'),
+        '7': require('./assets/plates/têtedroite.png'), 
     }), [])
 
     const currentStep = useMemo(() => steps[currentStepID], [currentStepID])

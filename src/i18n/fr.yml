@@ -99,6 +99,11 @@ o2moi5: Je vous remercie pour votre aide mais je ne sais pas ce que je dois fair
 #auloin-oeuvre3
 o209: Vous voulez savoir d'où vous venez et ce qui est arrivé au tableau ? approchez-vous de moi.
 
+#transition 
+
+t6: Voir le musée
+t7: Se déplacer vers l'oeuvre qui m'appelle
+
 #debut-oeuvre3
 o3o1: Laissez moi me présenter. On me nomme Monsieur Orsini, je suis sénateur en Italie. Vous vous posez de grandes questions. D’où est-ce que je viens ? Qui suis-je ? Où vais-je ? 
 Vous seul pouvez répondre à tout cela. 
@@ -124,7 +129,11 @@ o3o7: C’est le peintre qui a décidé pour vous, telle une tragédie grecque, 
 o3moi6: Comment puis-je réparer le mal que j'ai causé?
 o3o8: Vous ne pouvez pas. En revanche, il ne vous reste que le choix ultime, vivre et accepter ou être oublié et libre… Bon courage…
 o3moi7: C’est donc ça… c’est donc moi… 
-o3moi8: Que devrais-je faire ? Retourner dans mon tableau et accepter le sort qui m’a été attribué comme l’ont fait toutes les muses ? Suivre ma propre destinée en restant en dehors de mon cadre pour périr seul dans l’oubli de tous et de moi-même ? 
+
+#fin 
+o3moi8: Que devrais-je faire ?
+o3moi9: Retourner dans mon tableau et accepter le sort qui m’a été attribué comme l’ont fait toutes les muses ? 
+o3moi9: Suivre ma propre destinée en restant en dehors de mon cadre pour périr seul dans l’oubli de tous et de moi-même ? 
 
 #fin-choix1
 c1n1: Retourner dans le tableau et accepter mon sort 

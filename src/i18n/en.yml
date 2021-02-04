@@ -98,6 +98,10 @@ o2moi5: Thank you for your help but I don't know what to do.
 #auloin-oeuvre3
 o209: Do you want to know where you came from and what happened to the painting? Come closer to me.
 
+#transition 
+
+t6: See museum
+t7: Go to the painting that calls me
 
 #debut-oeuvre3
 o3o1: Let me introduce myself. My name is Mr Orsini, I am a senator in Italy. You are asking yourself some significant questions. Where do I come from? Who am I? Where am I going? 
@@ -124,7 +128,11 @@ o3o7: It was the painter who decided for you, like a Greek tragedy, you can't es
 o3moi6: How can I repair the harm I've caused?
 o3o8: You cannot. However, you only have the ultimate choice, to live and accept or to be forgotten and free... Good luck....
 o3moi7: So that's it... that's me... 
-o3moi8: What should I do? Go back to my painting and accept the fate that has been assigned to me as all the muses have done? Follow my own destiny by staying outside my frame to perish alone in the oblivion of all and myself? 
+
+#fin
+o3moi8: What should I do? 
+o3moi9: Go back to my painting and accept the fate that has been assigned to me as all the muses have done? 
+o3moi10: Follow my own destiny by staying outside my frame to perish alone in the oblivion of all and myself? 
 
 #fin-choix1
 c1n1: Return to the painting and accept my fate 
