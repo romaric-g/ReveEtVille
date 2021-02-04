@@ -3,13 +3,25 @@ import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 import { StepAction, StepInfo } from  '../../App';
-import { useEffect, useMemo, useState } from 'preact/hooks';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import Background from '../Background';
+
+import suspens from './../../assets/audio/suspens.mp3'
+import ambiance_1 from './../../assets/audio/ambiance_1.mp3';
+import ambiance_2 from './../../assets/audio/ambiance_2.mp3';
+import ambiance_3 from './../../assets/audio/ambiance_3.mp3';
 
 interface Props {
     stepInfo: StepInfo,
     next: (action: StepAction) => void,
     backgrounds: {[key: string]: any}
+}
+
+const sounds = {
+    suspens: suspens,
+    ambiance_1: ambiance_1,
+    ambiance_2: ambiance_2,
+    ambiance_3: ambiance_3
 }
 
 const Step = (props: Props) => {
@@ -21,11 +33,22 @@ const Step = (props: Props) => {
 
     const { t } = useTranslation();
 
-    const [ currentAudio, setCurrentAudio ] = useState<string | null>(null)
+    const [ audio, ] = useState(new Audio(null))
+    const currentAudio  = useRef(null)
 
     useEffect(() => {
-        
-    }, [stepInfo]);
+        audio.volume = 0.2;
+        if (stepInfo.audio !== currentAudio.current) {
+            if(!stepInfo.audio) {
+                audio.pause();
+                audio.currentTime = 0;  
+            } else {
+                audio.src = sounds[stepInfo.audio]
+                audio.play();
+            }
+        }
+        currentAudio.current = stepInfo.audio;
+    }, [stepInfo, audio]);
 
     if (stepInfo) {
         return (

@@ -37,6 +37,10 @@ module.exports = {
         use: ['babel-loader']
       },
       {
+        test: /\.mp3$/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.tsx$/,
         exclude: /(node_modules|bower_components)/,
         use: {
