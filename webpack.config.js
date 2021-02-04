@@ -41,6 +41,10 @@ module.exports = {
         loader: 'file-loader'
       },
       {
+        test: /\.mp4$/,
+        loader: 'file-loader'
+      },
+      {
         test: /\.tsx$/,
         exclude: /(node_modules|bower_components)/,
         use: {

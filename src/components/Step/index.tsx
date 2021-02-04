@@ -2,7 +2,7 @@ import { render, h } from 'preact';
 import { useTranslation } from 'react-i18next';
 import './index.scss';
 
-import { StepAction, StepInfo } from  '../../App';
+import { BackgroundInfo, StepAction, StepInfo } from  '../../App';
 import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import Background from '../Background';
 
@@ -10,11 +10,12 @@ import suspens from './../../assets/audio/suspens.mp3'
 import ambiance_1 from './../../assets/audio/ambiance_1.mp3';
 import ambiance_2 from './../../assets/audio/ambiance_2.mp3';
 import ambiance_3 from './../../assets/audio/ambiance_3.mp3';
+import BackgroundVideo from '../BackgroundVideo';
 
 interface Props {
     stepInfo: StepInfo,
     next: (action: StepAction) => void,
-    backgrounds: {[key: string]: any}
+    backgrounds: {[key: string]: BackgroundInfo}
 }
 
 const sounds = {
@@ -53,7 +54,12 @@ const Step = (props: Props) => {
     if (stepInfo) {
         return (
             <div className="Step">
-                <Background background={backgrounds[stepInfo.background]}/>
+                { !backgrounds[stepInfo.background].video ? (
+                    <Background background={backgrounds[stepInfo.background].image}/>
+                ) : (
+                    <BackgroundVideo video={backgrounds[stepInfo.background].video}/>
+                )}
+                
                 <div className="Step__container">
                     { stepInfo.type === 'dialog' && (
                         <div className="Step__dialog">

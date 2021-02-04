@@ -19,6 +19,10 @@ export interface StepInfo {
     goTostep?: string
 }
 
+export interface BackgroundInfo {
+    image?: any,
+    video?: string
+}
 export interface Dialog {
     text: string,
     speaker: string,
@@ -765,15 +769,31 @@ const App = () => {
         },
     }
     
-    const backgrounds = useMemo(() => ({
-        '0': require('./assets/plates/plate0.png'),
-        '1': require('./assets/plates/plate1.png'),
-        '2': require('./assets/plates/plate2.png'),
-        '3': require('./assets/plates/plate3.png'), 
-        '4': require('./assets/plates/plate4.png'),
-        '5': require('./assets/plates/prisedetête.png'), 
-        '6': require('./assets/plates/têtegauche.png'),
-        '7': require('./assets/plates/têtedroite.png'), 
+    const backgrounds: {[key: string]: BackgroundInfo} = useMemo(() => ({
+        '0': {
+            image: require('./assets/plates/plate0.png')
+        },
+        '1': {
+            image: require('./assets/plates/plate1.png')
+        },
+        '2': {
+            video: 'oeuvre1'
+        },
+        '3': {
+            video: 'oeuvre2'
+        }, 
+        '4': {
+            video: 'oeuvre3'
+        },
+        '5': {
+            image: require('./assets/plates/prisedetête.png')
+        }, 
+        '6': {
+            image: require('./assets/plates/têtegauche.png')
+        },
+        '7': {
+            image: require('./assets/plates/têtedroite.png')
+        }, 
     }), [])
 
     const currentStep = useMemo(() => steps[currentStepID], [currentStepID])
@@ -782,7 +802,7 @@ const App = () => {
         console.log(action)
         console.log(currentStep)
         if (!currentStep) {
-            if (action.type === 'start') setCurrentStepID('1')
+            if (action.type === 'start') setCurrentStepID('49')
             return;
         }
         if (currentStep.type === 'choose' && action.type  === 'choose') {
