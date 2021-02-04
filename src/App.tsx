@@ -36,7 +36,14 @@ export interface StepAction {
 
 const SPEARKER = {
     YOU: 'Vous',
-    TABLEAU1: 'Brigitte'
+    TABLEAU1_1: 'Marie',
+    TABLEAU1_2: 'Jacques Rolla',
+    TABLEAU2_1: 'Glaucos',
+    TABLEAU2_2: 'Une nymphe',
+    TABLEAU2_3: 'Triton',
+    TABLEAU2_4: 'Vénus',
+    TABLEAU3: 'Voix inconnue au loin',
+    TABLEAU3_1:'Sénateur Orsini'
 }
 
 const App = () => {
@@ -46,126 +53,647 @@ const App = () => {
     const steps: {[key: string]: StepInfo } = {
         '1': {
             type: 'dialog', background: '0', dialog: {
-                text: 'Aucun souvenir, j’ouvre un œil puis deux, ma tête me fait mal.',
+                text: 'intro1',
                 speaker: SPEARKER.YOU
             }
         },
         '2': {
             type: 'dialog', background: '0', dialog: {
-                text: 'Qu’est-ce que je fais là ?',
+                text: 'intro2',
                 speaker: SPEARKER.YOU
             }
         },
         '3': {
             type: 'dialog', background: '0', dialog: {
-                text: 'Tout est sombre autour de moi, la pièce à l’air immense.',
+                text: 'intro3',
                 speaker: SPEARKER.YOU
             }
         },
         '4': {
             type: 'dialog', background: '0', dialog: {
-                text: 'Tout m’a l’air familier mais je ne suis jamais venu ici.',
+                text: 'intro4',
                 speaker: SPEARKER.YOU
             }
         },
         '5': {
             type: 'dialog', background: '0', dialog: {
-                text: 'Je crois que je suis dans un musée.',
+                text: 'intro5',
                 speaker: SPEARKER.YOU
             }
         },
         '6': {
-            type: 'dialog', background: '1', dialog: {
-                text: 'Mais qu’est-il arrivé à ce tableau ?',
+            type: 'dialog', background: '0', dialog: {
+                text: 'intro6',
                 speaker: SPEARKER.YOU
             }
         },
         '7': {
-            type: 'interact', background: '2', interact: { text: 'Parler à cette oeuvre' }
+            type: 'interact', background: '0', interact: { text: 't1' }
         },
         '8': {
-            type: 'dialog', background: '3', dialog: {
-                text: 'Bonsoir, vous m’entendez ?',
-                speaker: SPEARKER.YOU
-            }
+            type: 'interact', background: '1', interact: { text: 't2' }
         },
         '9': {
             type: 'dialog', background: '3', dialog: {
-                text: 'Bien sur que nous t’entendons, tous les tableaux ont des oreilles.',
+                text: 'o1moi1',
                 speaker: SPEARKER.YOU
             }
         },
         '10': {
             type: 'dialog', background: '3', dialog: {
-                text: 'Pouquoi la femme sur le tableau là-bas ne me répond pas dans ce cas ?',
-                speaker: SPEARKER.YOU
+                text: 'o1o1',
+                speaker: SPEARKER.TABLEAU1_1
             }
         },
         '11': {
             type: 'dialog', background: '3', dialog: {
-                text: 'Son tableau est déchiré, vous ne pouvez communiquer ensemble, le temps est figé pour elle.',
+                text: 'o1moi2',
                 speaker: SPEARKER.YOU
             }
         },
         '12': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1o2',
+                speaker: SPEARKER.TABLEAU1_1
+            }
+        },
+        '13': {
             type: 'choose', background: '3', choose: [
                 {
-                    text: 'Depuis quand le tableau est déchiré ?',
+                    text: 'o1c1moi3',
                     goTostep: 'a1'
                 },
                 {
-                    text: 'Vous savez pourquoi je suis ici ? Je ne sais pas d\'où je viens.',
+                    text: 'o1c2moi3',
                     goTostep: 'b1'
                 },
                 {
-                    text: 'Mais qui êtes vous ?',
+                    text: 'o1c3moi3',
                     goTostep: 'c1'
                 },
             ]
         },
-        // RÉPONSE 1 (Dialogue qui fait avancer l’intrigue)
+        // RÉPONSE 1
         'a1': {
-            type: 'dialog', background: '4', dialog: {
-                text: 'Le tableau est déchiré depuis peu, encore hier soir il était entier.',
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c1moi3',
                 speaker: SPEARKER.YOU
             }
         },
         'a2': {
-            type: 'dialog', background: '4', dialog: {
-                text: 'Déchiré ? mais cette femme... elle semble souffrir...',
-                speaker: SPEARKER.YOU
-            }, 
-            goTostep: '12'
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c1o3',
+                speaker: SPEARKER.TABLEAU1_2
+            }
         },
+        'a3': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c1moi3.2',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        'a4': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c1o3.2',
+                speaker: SPEARKER.TABLEAU1_2
+            },
+            goTostep: '13'
+        },
+
         // RÉPONSE 2
         'b1': {
-            type: 'dialog', background: '4', dialog: {
-                text: 'A vrai dire nous ne savons pas ce que vous faites ici, le musée est fermé.',
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2moi3',
                 speaker: SPEARKER.YOU
-            }, 
-            goTostep: '12'
+            }
         },
+
+        'b2': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2o3',
+                speaker: SPEARKER.TABLEAU1_1
+            }
+        },
+
+        'b3': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2moi3.2',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        'b4': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2o3.2',
+                speaker: SPEARKER.TABLEAU1_2
+            }
+        },
+
+        'b5': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2moi3.3',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        'b6': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2o3.3',
+                speaker: SPEARKER.TABLEAU1_1
+            }
+        },
+
+        'b7': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2moi3.4',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        'b8': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c2o3.4',
+                speaker: SPEARKER.TABLEAU1_1
+            }, 
+            goTostep: '14'
+        },
+
+       
         // RÉPONSE 3
         'c1': {
-            type: 'dialog', background: '4', dialog: {
-                text: 'Qui sommes nous ? Seulement deux êtres, épris l’un de l’autre.',
-                speaker: SPEARKER.TABLEAU1
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c3moi3',
+                speaker: SPEARKER.YOU
             }, 
         },
         'c2': {
-            type: 'dialog', background: '4', dialog: {
-                text: 'Nous sommes dans ce tableau depuis 1878, c’est Henri GERVEX qui nous a imaginé et peint',
-                speaker: SPEARKER.TABLEAU1
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c3o3',
+                speaker: SPEARKER.TABLEAU1_2
             }, 
-            goTostep: '12'
-        }
+        },
+        'c3': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1c3o3.2',
+                speaker: SPEARKER.TABLEAU1_2
+            }, 
+            goTostep: '13'
+        },
+
+        '14': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'io1o4',
+                speaker: SPEARKER.TABLEAU1_1
+            }
+        },
+        '15': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1moi4',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '16': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1o5',
+                speaker: SPEARKER.TABLEAU1_1
+            }
+        },
+        '17': {
+            type: 'dialog', background: '3', dialog: {
+                text: 'o1moi5',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '18': {
+            type: 'interact', background: '3', interact: { text: 't3' }
+        },
+
+        '19': {
+            type: 'interact', background: '1', interact: { text: 't4' }
+        },
+
+        '20': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2moi1',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '21': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o1',
+                speaker: SPEARKER.TABLEAU2_1
+            }
+        },
+        '22': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2moi2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '23': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o2',
+                speaker: SPEARKER.TABLEAU2_2
+            }
+        },
+
+        '24': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o3',
+                speaker: SPEARKER.TABLEAU2_3
+            }
+        },
+        '25': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o4',
+                speaker: SPEARKER.TABLEAU2_1
+            }
+        },
+        '26': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o5',
+                speaker: SPEARKER.TABLEAU2_4
+            }
+        },
+        '27': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o6',
+                speaker: SPEARKER.TABLEAU2_2
+            }
+        },
+        '28': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2o7',
+                speaker: SPEARKER.TABLEAU2_4
+            }
+        },
+        '29': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2moi3',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        '30': {
+            type: 'choose', background: '2', choose: [
+                {
+                    text: 'o2c1moi4',
+                    goTostep: 'd1'
+                },
+                {
+                    text: 'o2c2moi4',
+                    goTostep: 'e1'
+                },
+                {
+                    text: 'o2c3moi4',
+                    goTostep: 'f1'
+                },
+            ]
+        },
+
+        // RÉPONSE 1
+        'd1': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1moi4',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'd2': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8',
+                speaker: SPEARKER.TABLEAU2_2
+            }
+        },
+        'd3': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.2',
+                speaker: SPEARKER.TABLEAU2_3
+            }
+        },
+        'd4': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.3',
+                speaker: SPEARKER.TABLEAU2_1
+            }
+        },
+        'd5': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.4',
+                speaker: SPEARKER.TABLEAU2_3
+            }
+        },
+        'd6': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.5',
+                speaker: SPEARKER.TABLEAU2_2
+            }
+        },
+
+        'd7': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1moi4.2',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        'd8': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.6',
+                speaker: SPEARKER.TABLEAU2_4
+            }
+        },
+        'd9': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.7',
+                speaker: SPEARKER.TABLEAU2_1
+            }
+        },
+        'd10': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1moi4.3',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'd11': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c1o8.8',
+                speaker: SPEARKER.TABLEAU2_1
+            },
+            goTostep: '31'
+        },
+
+        // RÉPONSE 2
+        'e1': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c2moi4',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'e2': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c2o8',
+                speaker: SPEARKER.TABLEAU2_1
+            }
+        },
+        'e3': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c2moi4.2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'e4': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c2o8.2',
+                speaker: SPEARKER.TABLEAU2_4
+            }
+        },
+        'e5': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c2o8.3',
+                speaker: SPEARKER.TABLEAU2_2
+            },
+            goTostep: '30'
+        },
+
+        // RÉPONSE 3
+        'f1': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c3moi4',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'f2': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c3o8',
+                speaker: SPEARKER.TABLEAU2_2
+            }
+        },
+        'f4': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c3o8.2',
+                speaker: SPEARKER.TABLEAU2_1
+            }
+        },
+        'f5': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c3o8.3',
+                speaker: SPEARKER.TABLEAU2_4
+            }
+        },
+
+        'f6': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c3moi4.2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'f7': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2c3o8.4',
+                speaker: SPEARKER.TABLEAU2_4
+            },
+            goTostep: '30'
+        },
+
+        '31': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o2moi5',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '32': {
+            type: 'dialog', background: '2', dialog: {
+                text: 'o209',
+                speaker: SPEARKER.TABLEAU3
+            }
+        },
+
+        '33': {
+            type: 'interact', background: '2', interact: { text: 't6' }
+        },
+
+        '34': {
+            type: 'interact', background: '1', interact: { text: 't7' }
+        },
+        '35': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o1',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '36': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi1',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '37': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o2',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '39': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '40': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o3',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '41': {
+            type: 'choose', background: '4', choose: [
+                {
+                    text: 'o3c1moi3',
+                    goTostep: 'g1'
+                },
+                {
+                    text: 'o3c2moi3',
+                    goTostep: 'h1'
+                },
+            ]
+        },
+
+         // RÉPONSE 1
+         'g1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c1moi3',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'g2': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c1o4',
+                speaker: SPEARKER.TABLEAU2_1
+            },
+            goTostep: '42'
+        },
+
+        // RÉPONSE 2
+        'h1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c2moi3',
+                speaker: SPEARKER.YOU
+            }
+        },
+        'h2': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3c2o4',
+                speaker: SPEARKER.TABLEAU2_1
+            },
+            goTostep: '41'
+        },
+
+        '42': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o5',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '43': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi4',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '44': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o6',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '45': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi5',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '46': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o7',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '47': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi6',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '48': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3o8',
+                speaker: SPEARKER.TABLEAU3_1
+            }
+        },
+        '49': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'o3moi7',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '50': {
+            type: 'dialog', background: '5', dialog: {
+                text: 'o3moi8',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '51': {
+            type: 'dialog', background: '6', dialog: {
+                text: 'o3moi9',
+                speaker: SPEARKER.YOU
+            }
+        },
+        '52': {
+            type: 'dialog', background: '7', dialog: {
+                text: 'o3moi10',
+                speaker: SPEARKER.YOU
+            }
+        },
+
+        '53': {
+            type: 'choose', background: '5', choose: [
+                {
+                    text: 'c1n1',
+                    goTostep: 'i1'
+                },
+                {
+                    text: 'c2n1',
+                    goTostep: 'j1'
+                },
+            ]
+        },
+
+         // FIN 1
+         'i1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'c1n2',
+                speaker: SPEARKER.YOU
+            }
+        },
+        // FIN 2
+        'j1': {
+            type: 'dialog', background: '4', dialog: {
+                text: 'c2n2',
+                speaker: SPEARKER.YOU
+            }
+        },
     }
     
     const backgrounds = useMemo(() => ({
         '0': require('./assets/plates/plate0.png'),
         '1': require('./assets/plates/plate1.png'),
-        '2': require('./assets/plates/plate2.png'), 
+        '2': require('./assets/plates/plate2.png'),
         '3': require('./assets/plates/plate3.png'), 
+        '4': require('./assets/plates/plate4.png'),
+        '5': require('./assets/plates/prisedetête.png'), 
+        '6': require('./assets/plates/têtegauche.png'),
+        '7': require('./assets/plates/têtedroite.png'), 
     }), [])
 
     const currentStep = useMemo(() => steps[currentStepID], [currentStepID])
