@@ -33,9 +33,11 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "i18next": "^19.8.7",
     "lodash": "^4.17.20",
     "preact": "^10.5.12",
     "preact-particles": "^1.18.11",
+    "react-i18next": "^11.8.5",
     "react-particles-js": "^3.4.1",
     "ts-loader": "^8.0.14",
     "typescript": "^4.2.0-dev.20210202",

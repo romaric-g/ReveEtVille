@@ -1,15 +1,18 @@
 import { render, h } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
+import { withNamespaces } from 'react-i18next';
 import './scss/app.scss';
 import Home from './components/Home';
 import Step from './components/Step';
-import Cursor, { ACTIONS, CURSOR_SIZE } from './components/Cursor'
+import Cursor, { CURSOR_SIZE } from './components/Cursor'
 import { Icons } from './components/Icon';
 import Menu from './components/Menu';
+import './scripts/i18n';
 
 export interface StepInfo {
     type: 'dialog' | 'choose' | 'interact', 
     background: string,
+    audio?: string,
     dialog?: Dialog,
     choose?: Choose[],
     interact?: Interact,
@@ -755,7 +758,7 @@ const App = () => {
     console.log("CURRENT: ", currentCursorAction);
 
     return (
-        <div class="App">
+        <div className="App">
             <Menu />
             <Cursor action={currentCursorAction} />
             { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : <Step stepInfo={steps[currentStepID]} next={next} backgrounds={backgrounds} /> }

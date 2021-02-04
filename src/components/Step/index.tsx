@@ -1,4 +1,5 @@
 import { render, h } from 'preact';
+import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 import { StepAction, StepInfo } from  '../../App';
@@ -18,6 +19,8 @@ const Step = (props: Props) => {
         backgrounds
     } = props;
 
+    const { t } = useTranslation();
+
     if (stepInfo) {
         return (
             <div className="Step">
@@ -26,21 +29,21 @@ const Step = (props: Props) => {
                     { stepInfo.type === 'dialog' && (
                         <div className="Step__dialog">
                             <p className="Step__dialog__speaker">{stepInfo.dialog.speaker}</p>
-                            <p className="Step__dialog__text">{stepInfo.dialog.text}</p>
+                            <p className="Step__dialog__text">{t(stepInfo.dialog.text)}</p>
                         </div>
                     ) }
                     { stepInfo.type === 'choose' && (
                         <div className="Step__chooses">
                             {
                                 stepInfo.choose.map((choose, index) => (
-                                    <button className="Step__chooses__option cursor--follow-h" onClick={() => next({type: 'choose', choose: index})}>{ choose.text }</button>
+                                    <button className="Step__chooses__option cursor--follow-h" onClick={() => next({type: 'choose', choose: index})}>{ t(choose.text) }</button>
                                 ))
                             }
                         </div>
                     )}
                     { stepInfo.type === 'interact' && (
                       <p className="Step__interactText cursor--follow-h">
-                          { stepInfo.interact.text}
+                          { t(stepInfo.interact.text) }
                       </p>
                     )}
                 </div>       

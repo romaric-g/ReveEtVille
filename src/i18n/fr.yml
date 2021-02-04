@@ -1,12 +1,9 @@
 intro1: Aucun souvenir, j’ouvre un œil puis deux, ma tête me fait mal. 
 intro2: Qu’est-ce que je fais là ? Tout est sombre autour de moi, la pièce à l’air immense.
-intro3: Tout m’a l’air familier mais je ne suis jamais venu ici;
-Je crois que je suis dans un musée. Mais qu’est-il arrivé à ce tableau ? 
+intro3: Tout m’a l’air familier mais je ne suis jamais venu ici; Je crois que je suis dans un musée. Mais qu’est-il arrivé à ce tableau ? 
 intro4: Pourquoi est-il déchiré? On dirait qu’il manque quelque chose. 
-intro5: La pauvre femme à l’air appeurée, qu’était-il en train de se
-passer ? Qui l’a mise dans cet état ? Tout va bien...Lucrèce ? 
-intro6: Étrange... peut-être est-elle trop choquée pour me répondre ?
-Peut-être que les autres œuvres pourraient m’aider à y voir plus clair ?
+intro5: La pauvre femme à l’air appeurée, qu’était-il en train de se passer ? Qui l’a mise dans cet état ? Tout va bien...Lucrèce ? 
+intro6: Étrange... peut-être est-elle trop choquée pour me répondre ? Peut-être que les autres œuvres pourraient m’aider à y voir plus clair ?
 
 #transition 
 
@@ -26,7 +23,7 @@ o1c1moi3.2: Déchiré ? mais cette femme... elle semble souffrir...
 o1c1o3.2: Je sais qu’un tableau se déchire lorsqu’un des personnages s’échappe de la toile, mais il risque de mourir et sombrer dans l’oubli s’il n’y retourne pas rapidement.
 
 #oeuvre1-choix2
-o1c2moi3: Vous savez pourquoi je suis ici ? Je ne sais pas d'où je viens.
+o1c2moi3: "Vous savez pourquoi je suis ici ? Je ne sais pas d'où je viens."
 o1c2o3: A vrai dire nous ne savons pas ce que vous faites ici, le musée est fermé. Nous nous sommes endormi ensemble paisiblement hier soir et rien n’a perturbé notre sommeil.
 o1c2moi3.2: Alors vous n’avez rien entendu par rapport à ce tableau alors ?
 o1c2o3.2: Non nous n’avons rien vu et rien entendu, désolé de ne pas pouvoir aider plus, pourquoi ces questions ?
@@ -43,7 +40,7 @@ o1c3o3.2: Nous sommes dans ce tableau depuis 1878, c’est Henri GERVEX qui nous
 #fin-oeuvre1
 o1o4: Vous allez chercher qui a commis ce délit ?
 o1moi4: Oui je crois bien que ma mission ici est de trouver qui à pu faire une horreur pareil 
-o1o5: Vous devriez aller voir l'œuvre d’à côté, ils sont nombreux peut-être qu’ils en sauront plus que nous deux.
+o1o5: "Vous devriez aller voir l'œuvre d’à côté, ils sont nombreux peut-être qu’ils en sauront plus que nous deux."
 o1moi5: Je vous remercie pour les informations que vous m’avez données.
 
 #transition 
@@ -88,8 +85,8 @@ o2c2o8.3: Nous sommes tous chamboulés par ce que nous avons entendu, nous ne sa
 #oeuvre2-choix3
 o2c3moi4: Mais pourquoi êtes-vous si nombreux dans un si petit espace ?
 o2c3o8: Nous sommes tous réunis pour notre déesse Vénus.
-o2c3o8.2: Nous somme ici pour l’honorer et la servir, ainsi nous l'accompagnons sur les eaux de l’amour.
-o2c3o8.3: Je suis sûre que vous me pensez vieille ? On dirait que je viens de l'Antiquité, en réalité nous avons juste deux siècles et demi, mon esquisse ne date que 1760.
+o2c3o8.2: "Nous somme ici pour l’honorer et la servir, ainsi nous l'accompagnons sur les eaux de l’amour."
+o2c3o8.3: "Je suis sûre que vous me pensez vieille ? On dirait que je viens de l'Antiquité, en réalité nous avons juste deux siècles et demi, mon esquisse ne date que 1760."
 o2c3moi4.2: Sage comme vous êtes, vous devez sûrement connaître des choses que je ne sais pas ?
 o2c3o8.4: Cela va de soi, je fais tout ce que je peux pour vous aider.
 
@@ -97,16 +94,15 @@ o2c3o8.4: Cela va de soi, je fais tout ce que je peux pour vous aider.
 o2moi5: Je vous remercie pour votre aide mais je ne sais pas ce que je dois faire.
 
 #auloin-oeuvre3
-o209: Vous voulez savoir d'où vous venez et ce qui est arrivé au tableau ? approchez-vous de moi.
+o209: "Vous voulez savoir d'où vous venez et ce qui est arrivé au tableau ? approchez-vous de moi."
 
 #transition 
 
 t6: Voir le musée
-t7: Se déplacer vers l'oeuvre qui m'appelle
+t7: "Se déplacer vers l'oeuvre qui m'appelle"
 
 #debut-oeuvre3
-o3o1: Laissez moi me présenter. On me nomme Monsieur Orsini, je suis sénateur en Italie. Vous vous posez de grandes questions. D’où est-ce que je viens ? Qui suis-je ? Où vais-je ? 
-Vous seul pouvez répondre à tout cela. 
+o3o1: Laissez moi me présenter. On me nomme Monsieur Orsini, je suis sénateur en Italie. Vous vous posez de grandes questions. D’où est-ce que je viens ? Qui suis-je ? Où vais-je ? Vous seul pouvez répondre à tout cela. 
 o3moi1: Moi seul ? Je ne pense pas avoir le temps de m’occuper de moi alors qu’un mal famé se balade parmi nous et risque à tout moment de faire pire qu’il n’a déjà fait.
 o3o2: Ce qui serait important de savoir c’est qu’il n’y a jamais de hasard.
 o3moi2: Que dites vous ?
@@ -132,8 +128,8 @@ o3moi7: C’est donc ça… c’est donc moi…
 
 #fin 
 o3moi8: Que devrais-je faire ?
-o3moi9: Retourner dans mon tableau et accepter le sort qui m’a été attribué comme l’ont fait toutes les muses ? 
-o3moi9: Suivre ma propre destinée en restant en dehors de mon cadre pour périr seul dans l’oubli de tous et de moi-même ? 
+o3moi9: "Retourner dans mon tableau et accepter le sort qui m’a été attribué comme l’ont fait toutes les muses ?"
+o3moi10: "Suivre ma propre destinée en restant en dehors de mon cadre pour périr seul dans l’oubli de tous et de moi-même ?"
 
 #fin-choix1
 c1n1: Retourner dans le tableau et accepter mon sort 
@@ -141,6 +137,5 @@ c1n2: Vous avez choisi de retourner dans le tableau. Votre sort peint par Tizian
 
 #fin-choix2
 c2n1: Sombrer dans l’oubli et la solitude éternelle
-c2n2: Vous avez choisi de ne pas retourner dans le tableau. 
-Petit à petit, plus personne ne se souvient de vous, pas même Lucrèce, vous l’avez sauvé, et vous avez sauvé votre image. Malheureusement, vous n’êtes plus Tarquin mais une âme sans vie errant entre les murs du musée. 
+c2n2: Vous avez choisi de ne pas retourner dans le tableau. Petit à petit, plus personne ne se souvient de vous, pas même Lucrèce, vous l’avez sauvé, et vous avez sauvé votre image. Malheureusement, vous n’êtes plus Tarquin mais une âme sans vie errant entre les murs du musée. 
 
