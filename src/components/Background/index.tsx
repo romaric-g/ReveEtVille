@@ -1,6 +1,6 @@
 import { render, h } from 'preact';
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
-import './../scss/background.scss';
+import './index.scss';
 
 interface Props {
     background: any

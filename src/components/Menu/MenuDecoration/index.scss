@@ -1,0 +1,28 @@
+
+
+.MenuDecoration {
+    display: flex;
+    flex-direction: column;
+    max-width: 15px;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 15px;
+        background-color: white;
+        margin: 4px 0;
+        transition-duration: 0.5s;
+    }
+
+    span:nth-child(2) {
+        width: 10px;
+    }
+
+    &--left {
+        align-items: flex-end;
+    }
+
+    &--right {
+        align-items: flex-start;
+    }
+}

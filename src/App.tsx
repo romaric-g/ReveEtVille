@@ -3,7 +3,9 @@ import { useCallback, useMemo, useState } from 'preact/hooks';
 import './scss/app.scss';
 import Home from './components/Home';
 import Step from './components/Step';
-import Cursor from './components/Cursor'
+import Cursor, { ACTIONS, CURSOR_SIZE } from './components/Cursor'
+import { Icons } from './components/Icon';
+import Menu from './components/Menu';
 
 export interface StepInfo {
     type: 'dialog' | 'choose' | 'interact', 
@@ -172,7 +174,7 @@ const App = () => {
         console.log(action)
         console.log(currentStep)
         if (!currentStep) {
-            if (action.type === 'start') setCurrentStepID('12')
+            if (action.type === 'start') setCurrentStepID('1')
             return;
         }
         if (currentStep.type === 'choose' && action.type  === 'choose') {
@@ -201,9 +203,33 @@ const App = () => {
         }
     }, [currentStep])
 
+    const currentCursorAction = useMemo(() => {
+        if (!currentStep) return null;
+        if (currentStep.type === 'dialog') return {
+            size: CURSOR_SIZE.FOCUS,
+            icon: "next" as Icons,
+            run: () => {
+                console.log('run');
+                next({type: 'next'})
+            }
+        };
+        if (currentStep.type === 'interact') return {
+            size: CURSOR_SIZE.FOCUS,
+            icon: "next" as Icons,
+            run: () => {
+                console.log('run');
+                next({type: 'interact'})
+            }
+        };
+        return null;
+    }, [currentStep])
+
+    console.log("CURRENT: ", currentCursorAction);
+
     return (
         <div class="App">
-            <Cursor />
+            <Menu />
+            <Cursor action={currentCursorAction} />
             { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : <Step stepInfo={steps[currentStepID]} next={next} backgrounds={backgrounds} /> }
         </div>
     )

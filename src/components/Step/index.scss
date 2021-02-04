@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './../../scss/variables.scss';
 
 .Step {
 
@@ -71,5 +71,13 @@
                 text-decoration: underline;
             }
         }
+    }
+
+    &__interactText {
+        font-family: 'Rasa', sans-serif;
+        font-size: 44px;
+        color: white;
+        max-width: 800px;
+        margin: 0 auto;
     }
 }

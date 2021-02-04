@@ -1,7 +1,7 @@
 import { render, h } from 'preact';
 import Particles from "preact-particles";
-import homeImage from './../assets/le musée dessin.png';
-import './../scss/home.scss';
+import homeImage from './../../assets/le musée dessin.png';
+import './index.scss';
 
 interface Props {
     start: () => void
