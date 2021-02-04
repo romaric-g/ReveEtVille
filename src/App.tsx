@@ -58,13 +58,15 @@ const App = () => {
             type: 'dialog', background: '0', dialog: {
                 text: 'intro1',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_1'
         },
         '2': {
             type: 'dialog', background: '0', dialog: {
                 text: 'intro2',
                 speaker: SPEARKER.YOU
-            }
+            },
+            audio: 'ambiance_2'
         },
         '3': {
             type: 'dialog', background: '0', dialog: {

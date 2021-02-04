@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 import { StepAction, StepInfo } from  '../../App';
-import { useMemo } from 'preact/hooks';
+import { useEffect, useMemo, useState } from 'preact/hooks';
 import Background from '../Background';
 
 interface Props {
@@ -20,6 +20,12 @@ const Step = (props: Props) => {
     } = props;
 
     const { t } = useTranslation();
+
+    const [ currentAudio, setCurrentAudio ] = useState<string | null>(null)
+
+    useEffect(() => {
+        
+    }, [stepInfo]);
 
     if (stepInfo) {
         return (
