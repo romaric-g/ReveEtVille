@@ -267,7 +267,7 @@ const App = () => {
 
         '14': {
             type: 'dialog', background: '3', dialog: {
-                text: 'io1o4',
+                text: 'o1o4',
                 speaker: SPEARKER.TABLEAU1_1
             },
             audio: 'ambiance_1'
