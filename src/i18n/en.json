@@ -92,6 +92,9 @@
     "c2n1": "Sinking into oblivion and eternal solitude",
     "c2n2": "You have chosen not to return to the painting. Gradually, nobody remembers you anymore, not even Lucretia, you saved her, and you saved your image. Unfortunately, you are no longer Tarquin but a lifeless soul wandering around the walls of the museum.",
 
+    "end": "Thanks for playing!",
+    "startbutton": "Start the experience",
+
     "YOU": "You",
     "TABLEAU1_1": "Marie",
     "TABLEAU1_2": "Jacques Rolla",
@@ -100,5 +103,12 @@
     "TABLEAU2_3": "Triton",
     "TABLEAU2_4": "Vénus",
     "TABLEAU3": "Voix inconnue au loin",
-    "TABLEAU3_1":"Sénateur Orsini"
+    "TABLEAU3_1":"Sénateur Orsini",
+
+    "resume": "Resume",
+    "leave": "Leave",
+    "oeuvres": "Works",
+    "credits": "Credits",
+
+    "interactexperience": "An interactive experience"
 }

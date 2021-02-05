@@ -1,0 +1,74 @@
+
+.PagesManager {
+    position: absolute;
+    min-height: 100vh;
+    background-color: #020202;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 120;
+    overflow: auto;
+    padding: 40px 80px;
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &__logo {
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                font-size: 48px;
+                line-height: 40px;
+                font-weight: 400;
+                margin: 0;
+                font-family: 'Crimson Text', sans-serif;
+                font-style: italic;
+            }
+
+            &__subtitle {
+                font-size: 18px;
+                font-weight: 400;
+                margin: 0;
+                font-family: 'Crimson Text', sans-serif;
+            }
+        }
+
+        &__close {
+            text-align: center;
+            margin: 0;
+            color: white;
+            box-shadow: none;
+            border: none;
+            font-size: 18px;
+            line-height: 46px;
+            background-color: rgba(0,0,0,0);
+            font-family: 'Crimson Text', serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &:hover, &:focus {
+                box-shadow: none!important;
+            }
+
+            svg path {
+                fill: #fff;
+            }
+
+            svg {
+                height: 40px;
+                width: 40px;
+            }
+        }
+    
+    }
+
+    &__content {
+        padding: 80px 0;
+    }
+}

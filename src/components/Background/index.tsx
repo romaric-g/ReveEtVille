@@ -1,14 +1,16 @@
 import { render, h } from 'preact';
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
+import classnames from 'classnames';
 import './index.scss';
 
 interface Props {
-    background: any
+    background: any,
+    fit: boolean
 }
 
 const body = document.body;
 
-const Background = ({ background }: Props) => {
+const Background = ({ background, fit }: Props) => {
 
     const [ mousePosition, setMousePosition ] = useState<{ x: number, y: number }>({ x: 0, y: 0 })
 
@@ -47,7 +49,9 @@ const Background = ({ background }: Props) => {
     }, []);
 
     return (
-        <div className="Background" >
+        <div className={classnames("Background", {
+            "Background--fit": fit
+        })} >
             <img style={BackgroundCss} className="Background__image" src={background} alt=""/>
         </div>
     )

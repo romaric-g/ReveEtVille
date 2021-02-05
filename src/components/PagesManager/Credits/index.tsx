@@ -1,8 +1,9 @@
 import { render, h } from 'preact';
+import './index.scss';
 
-const Oeuvres = () => (
-    <div className="Oeuvres">
-        <div>
+const Credits = () => (
+    <div className="Credits">
+        <section>
             <div class="titre blanc">
                 <strong><p>Créateurs</p></strong>
             </div>
@@ -39,9 +40,9 @@ const Oeuvres = () => (
                 </div>
             </div>
 
-        </div>
+        </section>
 
-        <div>
+        <section>
             <div class="titre blanc">
                 <strong><p>Remerciements</p></strong>
             </div>
@@ -53,8 +54,8 @@ const Oeuvres = () => (
                 <p class="createurs blanc">Thibaut Charron</p>
                 <p class="createurs blanc">Oscar Motta</p>
             </div>
-        </div>
+        </section>
     </div>
 )
 
-export default Oeuvres;
+export default Credits;

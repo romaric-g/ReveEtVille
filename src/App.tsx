@@ -1,5 +1,5 @@
 import { render, h } from 'preact';
-import { useCallback, useMemo, useState } from 'preact/hooks';
+import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import './scss/app.scss';
 import Home from './components/Home';
 import Step from './components/Step';
@@ -8,6 +8,8 @@ import { Icons } from './components/Icon';
 import Menu from './components/Menu';
 import './scripts/i18n';
 import Loading from './components/Loading';
+import Pages from './components/PagesManager';
+import PagesManager from './components/PagesManager';
 
 export interface StepInfo {
     type: 'dialog' | 'choose' | 'interact', 
@@ -53,11 +55,14 @@ export enum SPEARKER {
     TABLEAU3_1 = 'TABLEAU3_1'
 }
 
+export type Pages = 'oeuvres' | 'credits';
+
 const App = () => {
 
     const [ currentStepID, setCurrentStepID ] = useState<string | null>(null);
     const [ choiseShowed, setChoiseShowed ] = useState<string[]>([]);
     const [ volume, setVolume ] = useState(50);
+    const [ currentPage, setCurrentPage ] = useState<null | Pages>(null)
 
     const steps: {[key: string]: StepInfo } = {
         '1': {
@@ -757,18 +762,30 @@ const App = () => {
         },
 
          // FIN 1
-         'i1': {
+        'i1': {
             type: 'dialog', background: 'fingoboard', dialog: {
                 text: 'c1n2',
                 speaker: SPEARKER.YOU
-            }
+            },
+        },
+        'i2': {
+            type: 'interact', background: 'fingoboard', interact: {
+                text: 'end'
+            },
+            goTostep: 'end'
         },
         // FIN 2
         'j1': {
             type: 'dialog', background: 'findied', dialog: {
                 text: 'c2n2',
                 speaker: SPEARKER.YOU
-            }
+            },
+        },
+        'j2': {
+            type: 'interact', background: 'findied', interact: {
+                text: 'end'
+            },
+            goTostep: 'end'
         },
     }
     
@@ -822,12 +839,20 @@ const App = () => {
             (currentStep.type === 'interact' && action.type === 'interact')
         ) {
             if (currentStep.goTostep) {
-                const step = steps[currentStep.goTostep];
-                if( step.choose?.every((c) => choiseShowed.includes(c.goTostep)) ) {
-                
-                    setCurrentStepID(step.goTostep);
+                if (currentStep.goTostep === "end") {
+                    setCurrentStepID(null);
                 } else {
-                    setCurrentStepID(currentStep.goTostep);
+                    const step = steps[currentStep.goTostep];
+                    if(step.type === "choose") {
+                        if( step.choose?.every((c) => choiseShowed.includes(c.goTostep)) ) {
+                    
+                            setCurrentStepID(step.goTostep);
+                        } else {
+                            setCurrentStepID(currentStep.goTostep);
+                        }
+                    } else {
+                        setCurrentStepID(currentStep.goTostep);
+                    }
                 }
             } else {
                 const keys = Object.keys(steps);
@@ -869,29 +894,37 @@ const App = () => {
         setCurrentStepID(null)
     }, [setCurrentStepID])
 
+    useEffect(() => {
+        setChoiseShowed([])
+    }, [currentStepID])
+
     console.log("CURRENT: ", currentCursorAction);
 
     return (
         <div className="App">
-            <Menu 
-                isPlay={currentStepID !== null}
-                quit={quit}
-                volume={volume}
-                onVolumeChange={(e) => {
-                    console.log(e.target.value)
-                    setVolume(e.target.value as number);
-                }}
-            />
-            <Cursor action={currentCursorAction} />
-            { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : (
-                <Step 
-                    stepInfo={steps[currentStepID]} 
-                    next={next} 
-                    backgrounds={backgrounds}
+            <div className="App__main">
+                <Menu 
+                    isPlay={currentStepID !== null}
+                    quit={quit}
                     volume={volume}
-                    choiseShowed={choiseShowed}
+                    onVolumeChange={(e) => {
+                        console.log(e.target.value)
+                        setVolume(e.target.value as number);
+                    }}
+                    setCurrentPage={setCurrentPage}
                 />
-            ) }
+                <Cursor action={currentCursorAction} />
+                { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : (
+                    <Step 
+                        stepInfo={steps[currentStepID]} 
+                        next={next} 
+                        backgrounds={backgrounds}
+                        volume={volume}
+                        choiseShowed={choiseShowed}
+                    />
+                ) }
+            </div>
+            <PagesManager currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
 
     )

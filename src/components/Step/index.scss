@@ -19,6 +19,7 @@
     }
 
     &__dialog {
+        text-shadow: 0px 0px 4px rgba(0,0,0,0.6);
         position: absolute;
         bottom: 0;
         left: 0;
@@ -53,6 +54,7 @@
     }
 
     &__chooses {
+        text-shadow: 0px 0px 4px rgba(0,0,0,0.6);
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -78,8 +80,7 @@
 
             &--hidden {
                 position: relative;
-                color: rgb(156, 156, 156);
-                text-decoration: line-through white;
+                color: rgb(104, 104, 104);
                 
                 &:hover, &:focus {
                     transform: scale(1);
@@ -97,6 +98,7 @@
     }
 
     &__interactText {
+        text-shadow: 0px 0px 4px rgba(0,0,0,0.6);
         font-family: 'Crimson Text', sans-serif;
         font-size: 44px;
         color: white;

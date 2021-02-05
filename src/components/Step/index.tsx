@@ -72,7 +72,10 @@ const Step = (props: Props) => {
         return (
             <div className="Step">
                 { !backgrounds[stepInfo.background].video ? (
-                    <Background background={backgrounds[stepInfo.background].image}/>
+                    <Background 
+                        background={backgrounds[stepInfo.background].image}
+                        fit={stepInfo.background === '0'}
+                    />
                 ) : (
                     <BackgroundVideo video={backgrounds[stepInfo.background].video}/>
                 )}

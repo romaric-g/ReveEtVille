@@ -13,6 +13,10 @@
         object-fit: cover;
     }
 
+    &--fit {
+        object-fit: scale-down;
+    }
+
     &::after {
         content: '';
         display: block;

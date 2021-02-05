@@ -1,6 +1,7 @@
 import { render, h } from 'preact';
 import Particles from "preact-particles";
 import homeImage from './../../assets/le musée dessin.png';
+import { useTranslation } from 'react-i18next';
 import './index.scss';
 
 interface Props {
@@ -13,7 +14,11 @@ for (let index = 0; index < 300; index++) {
     wrapChildren.push(<div className="c"></div>);
 }
 
-const Home = ({ start } : Props) => (
+const Home = ({ start } : Props) => {
+
+  const { t } = useTranslation();
+
+  return (
     <div className="HomeSection">
         <Particles 
             id="tsparticles"
@@ -132,9 +137,10 @@ const Home = ({ start } : Props) => (
         />
         <img className="HomeSection__image" src={homeImage} alt="" />
         <div className="HomeSection__actions">
-            <button className="HomeSection__actions__button cursor--follow-h" onClick={start}>Commencer l'experience</button>
+            <button className="HomeSection__actions__button cursor--follow-h" onClick={start}>{ t('startbutton') }</button>
         </div>
     </div>
-);
+  );
+}
 
 export default Home;
