@@ -1,6 +1,5 @@
 import { render, h } from 'preact';
 import { useCallback, useMemo, useState } from 'preact/hooks';
-import { withNamespaces } from 'react-i18next';
 import './scss/app.scss';
 import Home from './components/Home';
 import Step from './components/Step';
@@ -777,10 +776,10 @@ const App = () => {
             image: require('./assets/plates/plate1.png')
         },
         '2': {
-            video: 'oeuvre1'
+            video: 'oeuvre2'
         },
         '3': {
-            video: 'oeuvre2'
+            video: 'oeuvre1'
         }, 
         '4': {
             video: 'oeuvre3'
@@ -839,7 +838,8 @@ const App = () => {
             run: () => {
                 console.log('run');
                 next({type: 'next'})
-            }
+            },
+            delay: 500
         };
         if (currentStep.type === 'interact') return {
             size: CURSOR_SIZE.FOCUS,
@@ -847,16 +847,24 @@ const App = () => {
             run: () => {
                 console.log('run');
                 next({type: 'interact'})
-            }
+            },
+            delay: 0
         };
         return null;
     }, [currentStep])
+
+    const quit = useCallback(() => {
+        setCurrentStepID(null)
+    }, [setCurrentStepID])
 
     console.log("CURRENT: ", currentCursorAction);
 
     return (
         <div className="App">
-            <Menu />
+            <Menu 
+                isPlay={currentStepID !== null}
+                quit={quit}
+            />
             <Cursor action={currentCursorAction} />
             { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : <Step stepInfo={steps[currentStepID]} next={next} backgrounds={backgrounds} /> }
         </div>

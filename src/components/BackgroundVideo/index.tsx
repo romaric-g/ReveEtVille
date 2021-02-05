@@ -3,9 +3,9 @@ import classnames from 'classnames';
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks';
 import './index.scss';
 
-import oeuvre1 from './../../assets/video/oeuvre 1 v2 25 f.mp4';
-import oeuvre2 from './../../assets/video/Oeuvre 2 25 f.mp4';
-import oeuvre3 from './../../assets/video/Oeuvre 3 25 f.mp4';
+import oeuvre1 from './../../assets/video/Video_1.mp4';
+import oeuvre2 from './../../assets/video/Video_2.mp4';
+import oeuvre3 from './../../assets/video/Video_3.mp4';
 
 interface Props {
     video: string
@@ -42,7 +42,7 @@ const BackgroundVideo = ({ video }: Props) => {
     }, []);
 
     return (
-        <div className="BackgroundVideo" >
+        <div className="BackgroundVideo">
             <video className={classnames("BackgroundVideo__video", {
                 "BackgroundVideo__video--video3styletemp": video === 'oeuvre3'
             })} autoplay loop width="1080px">

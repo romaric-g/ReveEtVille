@@ -51,6 +51,13 @@ const Step = (props: Props) => {
         currentAudio.current = stepInfo.audio;
     }, [stepInfo, audio]);
 
+    useEffect(() => {
+        return () => {
+            audio.pause();
+            audio.currentTime = 0;  
+        }
+    }, [])
+
     if (stepInfo) {
         return (
             <div className="Step">

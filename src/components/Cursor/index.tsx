@@ -6,12 +6,14 @@ import { hasSomeParentTheClass } from '../../scripts/utils';
 
 const body = document.body;
 
+interface Action {
+    size: number,
+    icon: Icons,
+    run: () => void,
+    delay: number
+}
 interface Props {
-    action: {
-        size: number,
-        icon: Icons,
-        run: () => void
-    }
+    action: Action
 }
 
 export const CURSOR_SIZE = {
@@ -19,17 +21,21 @@ export const CURSOR_SIZE = {
     FOCUS: 100
 }
 
+interface CursorInfo { x: number, y: number, size: number, waitAction: boolean, showCursorAction: boolean }
+
 const Cursor = ({ action }: Props) => {
 
-    const [ mousePosition, setMousePosition ] = useState<{ x: number, y: number, size: number }>({ x: 0, y: 0, size: 50})
-    const actionRef = useRef();
+    const [ cursorInfo, setcursorInfo ] = useState<CursorInfo>({ x: 0, y: 0, size: 5, waitAction: false, showCursorAction: true})
+    const actionRef = useRef<Action>();
+    const waitactionRef = useRef<boolean>(cursorInfo.waitAction);
+    const delayRef = useRef(0);
 
     useEffect(() => {
         console.log('NEW action')
         console.log(action)
-        if (mousePosition && action && action.size) {
+        if (cursorInfo && action && action.size) {
             console.log('OK')
-            setMousePosition(Object.assign({}, mousePosition, {size: action.size}));
+            setcursorInfo(Object.assign({}, cursorInfo, {size: action.size}));
         }
         actionRef.current = action;
     }, [action])
@@ -37,27 +43,32 @@ const Cursor = ({ action }: Props) => {
     const onMouseMove = useCallback((e) => {
         const target = (e.target);
         if(target) {
-            setMousePosition({ x: e.clientX, y: e.clientY , size: 
-                ( target.classList.contains('cursor--hover') ? CURSOR_SIZE.FOCUS : CURSOR_SIZE.DEFAULT )
-            })
+            const action = actionRef.current;
+            const waitAction = !hasSomeParentTheClass(target, 'cursor--noaction') && !!action;
+            console.log(action)
+            // setcursorInfo({ x: e.clientX, y: e.clientY, waitAction, size: 
+            //     ( target.classList.contains('cursor--hover') ? CURSOR_SIZE.FOCUS : CURSOR_SIZE.DEFAULT )
+            // })
             if(hasSomeParentTheClass(target, 'cursor--follow-h')) {
                 const targetPos = target.getBoundingClientRect()
-                setMousePosition({ x: e.clientX, y: (targetPos.y + targetPos.height / 2) , size: CURSOR_SIZE.FOCUS })
+                setcursorInfo({ x: e.clientX, y: (targetPos.y + targetPos.height / 2), waitAction , size: waitAction ? action.size : CURSOR_SIZE.FOCUS, showCursorAction: false })
             } else {
-                setMousePosition({ x: e.clientX, y: e.clientY , size: CURSOR_SIZE.DEFAULT  })
+                setcursorInfo({ x: e.clientX, y: e.clientY, waitAction, size: waitAction ? action.size : CURSOR_SIZE.DEFAULT, showCursorAction: true  })
             }
         } else {
-            setMousePosition({ x: e.clientX, y: e.clientY , size: CURSOR_SIZE.DEFAULT })
+            setcursorInfo({ x: e.clientX, y: e.clientY, waitAction: false, size: CURSOR_SIZE.DEFAULT, showCursorAction: true })
         }
     }, [])
 
     const onClick = useCallback((e) => {
         console.log('Click event')
         console.log(actionRef.current)
-        if (actionRef.current) {
+        const delayPassed = new Date().getTime() - delayRef.current > actionRef.current.delay;
+        if (actionRef.current && waitactionRef.current && delayPassed) {
             (actionRef.current as any).run()
+            delayRef.current = new Date().getTime();
         }
-    }, [actionRef])
+    }, [actionRef, waitactionRef])
 
     useEffect(() => {
         body.addEventListener('mousemove', onMouseMove);
@@ -68,16 +79,20 @@ const Cursor = ({ action }: Props) => {
         }
     }, []);
 
+    useEffect(() => {
+        waitactionRef.current = cursorInfo.waitAction;
+    }, [cursorInfo])
+
     const cursorCss = useMemo(() => ({
-        top: mousePosition.y - mousePosition.size /2 + 'px',
-        left: mousePosition.x - mousePosition.size  /2 + 'px',
-        width: ((action && action.size) || mousePosition.size) + 'px',
-        height: ((action && action.size) || mousePosition.size) + 'px'
-    }), [mousePosition])
+        top: cursorInfo.y - cursorInfo.size /2 + 'px',
+        left: cursorInfo.x - cursorInfo.size  /2 + 'px',
+        width: cursorInfo.size + 'px',
+        height: cursorInfo.size + 'px'
+    }), [cursorInfo])
     
     return (
         <div className="Cursor" style={cursorCss}>
-            {action && (
+            {action && cursorInfo.waitAction && cursorInfo.showCursorAction && (
                 <Icon icon={action.icon} />
             )}
         </div>

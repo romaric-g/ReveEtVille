@@ -130,7 +130,6 @@ const Home = ({ start } : Props) => (
                 "retina_detect": true
               }} 
         />
-        <p className="HomeSection__title">L’évadé</p>
         <img className="HomeSection__image" src={homeImage} alt="" />
         <div className="HomeSection__actions">
             <button className="HomeSection__actions__button cursor--follow-h" onClick={start}>Commencer l'experience</button>
