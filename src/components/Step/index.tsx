@@ -1,9 +1,11 @@
 import { render, h } from 'preact';
+import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
 import { useTranslation } from 'react-i18next';
+import classnames from 'classnames';
+
 import './index.scss';
 
-import { BackgroundInfo, StepAction, StepInfo } from  '../../App';
-import { useEffect, useMemo, useRef, useState } from 'preact/hooks';
+import { BackgroundInfo, StepAction, StepInfo, SPEARKER } from  '../../App';
 import Background from '../Background';
 
 import suspens from './../../assets/audio/suspens.mp3'
@@ -15,7 +17,8 @@ import BackgroundVideo from '../BackgroundVideo';
 interface Props {
     stepInfo: StepInfo,
     next: (action: StepAction) => void,
-    backgrounds: {[key: string]: BackgroundInfo}
+    backgrounds: {[key: string]: BackgroundInfo},
+    volume: number
 }
 
 const sounds = {
@@ -29,7 +32,8 @@ const Step = (props: Props) => {
     const {
         stepInfo,
         next,
-        backgrounds
+        backgrounds,
+        volume
     } = props;
 
     const { t } = useTranslation();
@@ -38,7 +42,7 @@ const Step = (props: Props) => {
     const currentAudio  = useRef(null)
 
     useEffect(() => {
-        audio.volume = 0.2;
+        audio.loop = true;
         if (stepInfo.audio !== currentAudio.current) {
             if(!stepInfo.audio) {
                 audio.pause();
@@ -50,6 +54,10 @@ const Step = (props: Props) => {
         }
         currentAudio.current = stepInfo.audio;
     }, [stepInfo, audio]);
+
+    useEffect(() => {
+        audio.volume = (0.2 * (volume / 50.0))
+    }, [audio, volume])
 
     useEffect(() => {
         return () => {
@@ -69,8 +77,11 @@ const Step = (props: Props) => {
                 
                 <div className="Step__container">
                     { stepInfo.type === 'dialog' && (
-                        <div className="Step__dialog">
-                            <p className="Step__dialog__speaker">{stepInfo.dialog.speaker}</p>
+                        <div className={classnames("Step__dialog", {
+                            "Step__dialog--left": stepInfo.dialog.speaker === SPEARKER.YOU,
+                            "Step__dialog--right": stepInfo.dialog.speaker !== SPEARKER.YOU,
+                        })}>
+                            <p className="Step__dialog__speaker">{t(stepInfo.dialog.speaker)}</p>
                             <p className="Step__dialog__text">{t(stepInfo.dialog.text)}</p>
                         </div>
                     ) }

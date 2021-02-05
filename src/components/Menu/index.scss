@@ -20,6 +20,7 @@
 
             &__title {
                 font-size: 48px;
+                height: 34px;
                 font-weight: 400;
                 margin: 0;
                 font-family: 'Crimson Text', sans-serif;
@@ -109,6 +110,46 @@
                     box-shadow: none;
                     text-decoration: underline;
                 }
+            }
+        }
+
+        &__audio {
+            position: absolute;
+            left: 80px;
+            bottom: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                height: 18px;
+                width: 18px;
+            }
+
+            &__range {
+                -webkit-appearance: none;
+                margin-left: 15px;
+                height: 4px;
+                width: 70px;
+                //color: #FC4830;
+            }
+
+            &__range::-webkit-slider-thumb{
+                -webkit-appearance:none;
+                border:1px solid #ddd;
+                width:15px;
+                height:15px;
+                border-radius:50%;
+                background:#FC4830;
+                box-shadow:0 0 .125rem #aaa;
+            }
+
+            &__range::-moz-range-track{
+                border:3px solid transparent;
+                padding:.5rem;
+                height:1rem;
+                border-radius:1.5rem;
+                background:none
             }
         }
 

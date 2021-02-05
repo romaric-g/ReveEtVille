@@ -31,10 +31,7 @@ const Cursor = ({ action }: Props) => {
     const delayRef = useRef(0);
 
     useEffect(() => {
-        console.log('NEW action')
-        console.log(action)
         if (cursorInfo && action && action.size) {
-            console.log('OK')
             setcursorInfo(Object.assign({}, cursorInfo, {size: action.size}));
         }
         actionRef.current = action;
@@ -45,7 +42,6 @@ const Cursor = ({ action }: Props) => {
         if(target) {
             const action = actionRef.current;
             const waitAction = !hasSomeParentTheClass(target, 'cursor--noaction') && !!action;
-            console.log(action)
             // setcursorInfo({ x: e.clientX, y: e.clientY, waitAction, size: 
             //     ( target.classList.contains('cursor--hover') ? CURSOR_SIZE.FOCUS : CURSOR_SIZE.DEFAULT )
             // })
@@ -61,8 +57,6 @@ const Cursor = ({ action }: Props) => {
     }, [])
 
     const onClick = useCallback((e) => {
-        console.log('Click event')
-        console.log(actionRef.current)
         const delayPassed = new Date().getTime() - delayRef.current > actionRef.current.delay;
         if (actionRef.current && waitactionRef.current && delayPassed) {
             (actionRef.current as any).run()
@@ -84,17 +78,22 @@ const Cursor = ({ action }: Props) => {
     }, [cursorInfo])
 
     const cursorCss = useMemo(() => ({
-        top: cursorInfo.y - cursorInfo.size /2 + 'px',
-        left: cursorInfo.x - cursorInfo.size  /2 + 'px',
+        top: cursorInfo.y + 'px',
+        left: cursorInfo.x + 'px'
+    }), [cursorInfo])
+
+    const cursorCircleCss = useMemo(() => ({
         width: cursorInfo.size + 'px',
         height: cursorInfo.size + 'px'
     }), [cursorInfo])
     
     return (
         <div className="Cursor" style={cursorCss}>
-            {action && cursorInfo.waitAction && cursorInfo.showCursorAction && (
-                <Icon icon={action.icon} />
-            )}
+            <div className="Cursor__circle" style={cursorCircleCss}>
+                {action && cursorInfo.waitAction && cursorInfo.showCursorAction && (
+                    <Icon icon={action.icon} />
+                )}
+            </div>
         </div>
     )
 }

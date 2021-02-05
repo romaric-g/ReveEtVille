@@ -3,13 +3,16 @@ import { useState } from 'preact/hooks';
 import classnames from 'classnames';
 import MenuDecoration from './MenuDecoration';
 import './index.scss';
+import Icon from '../Icon';
 
 interface Props {
     isPlay: boolean,
-    quit: () => void
+    quit: () => void,
+    volume: number,
+    onVolumeChange: (event: any) => void
 }
 
-const Menu = ({ isPlay, quit }: Props) => {
+const Menu = ({ isPlay, quit, volume, onVolumeChange }: Props) => {
 
     const [ open, setOpen ] = useState(false);
 
@@ -25,7 +28,11 @@ const Menu = ({ isPlay, quit }: Props) => {
                         }}>Quitter</button>
                     )}
                     <button className="Menu__inner__links__link cursor--follow-h">Peintures</button>
-                    <button className="Menu__inner__links__link cursor--follow-h">Crédit</button>
+                    <button className="Menu__inner__links__link cursor--follow-h">Crédits</button>
+                </div>
+                <div className="Menu__inner__audio">
+                    <Icon icon="audio" />
+                    <input className="Menu__inner__audio__range" value={volume} type="range" id="points" name="points" min="0" max="100" onChange={onVolumeChange}></input>
                 </div>
             </div>
             <div className="Menu__header">

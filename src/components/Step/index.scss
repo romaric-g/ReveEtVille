@@ -1,7 +1,11 @@
 @import './../../scss/variables.scss';
 
 .Step {
-
+    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
+    -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
+    user-select: none; /* Propriété standard */
+    
     &__container {
         position: absolute;
         top: 0;
@@ -19,21 +23,32 @@
         bottom: 0;
         left: 0;
         right: 0;
-        text-align: center;
         max-width: 700px;
-        margin: 0 auto $spacing-large auto;
+        margin: 0 auto $spacing-page-vertical auto;
+        width: 400px;
+        min-height: 200px;
 
         &__speaker {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Crimson Text', sans-serif;
             font-size: 14px;
             font-weight: bold;
         }
 
         &__text {
             font-family: 'Crimson Text', sans-serif;
-            font-size: 24px;
+            font-size: 30px;
             font-weight: 400;
+            font-style: italic;
             margin: 0;
+            padding-left: 30px;
+        }
+
+        &--left {
+            margin: 0 auto $spacing-page-vertical 200px;
+        }
+
+        &--right {
+            margin: 0 auto $spacing-page-vertical 50%;
         }
     }
 
@@ -58,8 +73,6 @@
 
             &:hover {
                 transform: scale(1.2);
-                max-width: 840px;
-                font-weight: bold;
             }
 
             &:focus {

@@ -90,5 +90,15 @@
     "c1n1": "Return to the painting and accept my fate",
     "c1n2": "You have chosen to return to the painting. Your fate painted by Tiziano Vecellio is now forever anchored in the frame of this painting, in full view of all visitors. You are the eternal Tarquin, nobody will forget you as long as you are exposed.",
     "c2n1": "Sinking into oblivion and eternal solitude",
-    "c2n2": "You have chosen not to return to the painting. Gradually, nobody remembers you anymore, not even Lucretia, you saved her, and you saved your image. Unfortunately, you are no longer Tarquin but a lifeless soul wandering around the walls of the museum."
+    "c2n2": "You have chosen not to return to the painting. Gradually, nobody remembers you anymore, not even Lucretia, you saved her, and you saved your image. Unfortunately, you are no longer Tarquin but a lifeless soul wandering around the walls of the museum.",
+
+    "YOU": "You",
+    "TABLEAU1_1": "Marie",
+    "TABLEAU1_2": "Jacques Rolla",
+    "TABLEAU2_1": "Glaucos",
+    "TABLEAU2_2": "Une nymphe",
+    "TABLEAU2_3": "Triton",
+    "TABLEAU2_4": "Vénus",
+    "TABLEAU3": "Voix inconnue au loin",
+    "TABLEAU3_1":"Sénateur Orsini"
 }

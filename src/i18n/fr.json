@@ -91,5 +91,15 @@
     "c1n1": "Retourner dans le tableau et accepter mon sort.",
     "c1n2": "Vous avez choisi de retourner dans le tableau. Votre sort peint par Tiziano Vecellio est désormais ancré à jamais dans l’encadrement de cette toile, à la vue de tous visiteurs. Vous êtes l’éternel Tarquin, personne ne vous oubliera tant que vous serez exposé.",
     "c2n1": "Sombrer dans l’oubli et la solitude éternelle.",
-    "c2n2": "Vous avez choisi de ne pas retourner dans le tableau. Petit à petit, plus personne ne se souvient de vous, pas même Lucrèce, vous l’avez sauvé, et vous avez sauvé votre image. Malheureusement, vous n’êtes plus Tarquin mais une âme sans vie errant entre les murs du musée."
+    "c2n2": "Vous avez choisi de ne pas retourner dans le tableau. Petit à petit, plus personne ne se souvient de vous, pas même Lucrèce, vous l’avez sauvé, et vous avez sauvé votre image. Malheureusement, vous n’êtes plus Tarquin mais une âme sans vie errant entre les murs du musée.",
+
+    "YOU": "Vous",
+    "TABLEAU1_1": "Marie",
+    "TABLEAU1_2": "Jacques Rolla",
+    "TABLEAU2_1": "Glaucos",
+    "TABLEAU2_2": "Une nymphe",
+    "TABLEAU2_3": "Triton",
+    "TABLEAU2_4": "Vénus",
+    "TABLEAU3": "Voix inconnue au loin",
+    "TABLEAU3_1":"Sénateur Orsini"
 }

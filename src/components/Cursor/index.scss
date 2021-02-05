@@ -7,12 +7,21 @@ body {
     z-index: 140;
     pointer-events: none;
     position: absolute;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    transition: width 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform-origin: center;
+    height: 0px;
+    width: 0px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    .Cursor__circle {
+        flex-shrink: 0;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

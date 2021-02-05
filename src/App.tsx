@@ -24,7 +24,7 @@ export interface BackgroundInfo {
 }
 export interface Dialog {
     text: string,
-    speaker: string,
+    speaker: SPEARKER,
 }
 export interface Choose {
     text: string,
@@ -40,21 +40,22 @@ export interface StepAction {
     choose?: number
 }
 
-const SPEARKER = {
-    YOU: 'Vous',
-    TABLEAU1_1: 'Marie',
-    TABLEAU1_2: 'Jacques Rolla',
-    TABLEAU2_1: 'Glaucos',
-    TABLEAU2_2: 'Une nymphe',
-    TABLEAU2_3: 'Triton',
-    TABLEAU2_4: 'Vénus',
-    TABLEAU3: 'Voix inconnue au loin',
-    TABLEAU3_1:'Sénateur Orsini'
+export enum SPEARKER {
+    YOU = 'YOU',
+    TABLEAU1_1 = 'TABLEAU1_1',
+    TABLEAU1_2 = 'TABLEAU1_2',
+    TABLEAU2_1 = 'TABLEAU2_1',
+    TABLEAU2_2 = 'TABLEAU2_2',
+    TABLEAU2_3 = 'TABLEAU2_3',
+    TABLEAU2_4 = 'TABLEAU2_4',
+    TABLEAU3 = 'TABLEAU3',
+    TABLEAU3_1 = 'TABLEAU3_1'
 }
 
 const App = () => {
 
     const [ currentStepID, setCurrentStepID ] = useState<string | null>(null);
+    const [ volume, setVolume ] = useState(50);
 
     const steps: {[key: string]: StepInfo } = {
         '1': {
@@ -864,9 +865,21 @@ const App = () => {
             <Menu 
                 isPlay={currentStepID !== null}
                 quit={quit}
+                volume={volume}
+                onVolumeChange={(e) => {
+                    console.log(e.target.value)
+                    setVolume(e.target.value as number);
+                }}
             />
             <Cursor action={currentCursorAction} />
-            { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : <Step stepInfo={steps[currentStepID]} next={next} backgrounds={backgrounds} /> }
+            { currentStepID === null ? <Home start={() => next({ type: 'start'})} /> : (
+                <Step 
+                    stepInfo={steps[currentStepID]} 
+                    next={next} 
+                    backgrounds={backgrounds}
+                    volume={volume}
+                />
+            ) }
         </div>
     )
 }
