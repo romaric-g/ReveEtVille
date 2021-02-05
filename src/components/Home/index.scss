@@ -37,6 +37,7 @@
     
             &:focus, &:hover {
                 border-width: 5px;
+                outline: none!important;
             }
         }
     }

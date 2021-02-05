@@ -6,6 +6,8 @@ import './index.scss';
 import oeuvre1 from './../../assets/video/Video_1.mp4';
 import oeuvre2 from './../../assets/video/Video_2.mp4';
 import oeuvre3 from './../../assets/video/Video_3.mp4';
+import Tueur_25_f from './../../assets/video/Tueur_25_f.mp4';
+import Fin_lucrece from './../../assets/video/Fin_lucrece.mp4';
 
 interface Props {
     video: string
@@ -14,7 +16,9 @@ interface Props {
 const videos = {
     oeuvre1,
     oeuvre2,
-    oeuvre3
+    oeuvre3,
+    Tueur_25_f,
+    Fin_lucrece
 }
 
 const body = document.body;

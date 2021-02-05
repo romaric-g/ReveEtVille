@@ -1,0 +1,33 @@
+
+.Oeuvres {
+    .blanc {
+        color: white;
+    }
+    
+    .rouge {
+      color: #FC4830;
+    }
+    
+    .createurs {
+      font-family: Crimson Text;
+      font-size: 20px;
+    }
+    
+    .titre {
+    font-family: Crimson Text;
+    
+    font-style: italic;
+    font-size: 24px;
+    
+    }
+    
+    .ligne {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    p {
+      margin-bottom: 0;
+    }
+}

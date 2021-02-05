@@ -5,7 +5,7 @@
     -webkit-user-select: none; /* Chrome, Safari, Opéra depuis la version 15 */
     -ms-user-select: none; /* Internet explorer depuis la version 10 et Edge */
     user-select: none; /* Propriété standard */
-    
+
     &__container {
         position: absolute;
         top: 0;
@@ -66,13 +66,24 @@
             box-shadow: none;
             border: none;
             font-size: 44px;
+            line-height: 46px;
             color: white;
             transition-duration: 0.5s;
             max-width: 800px;
             margin: 0 auto;
 
-            &:hover {
+            &:hover, &:focus {
                 transform: scale(1.2);
+            }
+
+            &--hidden {
+                position: relative;
+                color: rgb(156, 156, 156);
+                text-decoration: line-through white;
+                
+                &:hover, &:focus {
+                    transform: scale(1);
+                }
             }
 
             &:focus {
@@ -81,7 +92,6 @@
                 border: none;
                 border-color: rgba(0,0,0,0);
                 box-shadow: none;
-                text-decoration: underline;
             }
         }
     }

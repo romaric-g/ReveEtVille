@@ -18,7 +18,8 @@ interface Props {
     stepInfo: StepInfo,
     next: (action: StepAction) => void,
     backgrounds: {[key: string]: BackgroundInfo},
-    volume: number
+    volume: number,
+    choiseShowed: string[]
 }
 
 const sounds = {
@@ -33,7 +34,8 @@ const Step = (props: Props) => {
         stepInfo,
         next,
         backgrounds,
-        volume
+        volume,
+        choiseShowed
     } = props;
 
     const { t } = useTranslation();
@@ -89,7 +91,9 @@ const Step = (props: Props) => {
                         <div className="Step__chooses">
                             {
                                 stepInfo.choose.map((choose, index) => (
-                                    <button className="Step__chooses__option cursor--follow-h" onClick={() => next({type: 'choose', choose: index})}>{ t(choose.text) }</button>
+                                    <button className={classnames("Step__chooses__option", "cursor--follow-h", {
+                                        "Step__chooses__option--hidden": choiseShowed.includes(choose.goTostep)
+                                    })} onClick={() => next({type: 'choose', choose: index})}>{ t(choose.text) }</button>
                                 ))
                             }
                         </div>

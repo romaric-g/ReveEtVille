@@ -20,7 +20,7 @@
 
             &__title {
                 font-size: 48px;
-                height: 34px;
+                line-height: 40px;
                 font-weight: 400;
                 margin: 0;
                 font-family: 'Crimson Text', sans-serif;
@@ -53,9 +53,12 @@
                 text-transform: uppercase;
                 letter-spacing: 5px;
                 word-wrap: break-word;
+                font-family: 'Crimson Text', sans-serif;
             }
 
-            &:hover {
+            &:hover, &:focus {
+                outline: none!important;
+
                 .MenuDecoration {
                     span {
                         width: 25px;
@@ -108,7 +111,6 @@
                     border: none;
                     border-color: rgba(0,0,0,0);
                     box-shadow: none;
-                    text-decoration: underline;
                 }
             }
         }

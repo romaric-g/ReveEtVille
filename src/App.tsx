@@ -7,6 +7,7 @@ import Cursor, { CURSOR_SIZE } from './components/Cursor'
 import { Icons } from './components/Icon';
 import Menu from './components/Menu';
 import './scripts/i18n';
+import Loading from './components/Loading';
 
 export interface StepInfo {
     type: 'dialog' | 'choose' | 'interact', 
@@ -55,6 +56,7 @@ export enum SPEARKER {
 const App = () => {
 
     const [ currentStepID, setCurrentStepID ] = useState<string | null>(null);
+    const [ choiseShowed, setChoiseShowed ] = useState<string[]>([]);
     const [ volume, setVolume ] = useState(50);
 
     const steps: {[key: string]: StepInfo } = {
@@ -143,8 +145,8 @@ const App = () => {
                     goTostep: 'c1'
                 },
             ], 
-            audio: 'ambiance_1'
-
+            audio: 'ambiance_1',
+            goTostep: '14'
         },
         // RÉPONSE 1
         'a1': {
@@ -240,7 +242,7 @@ const App = () => {
                 text: 'o1c2o3.4',
                 speaker: SPEARKER.TABLEAU1_1
             }, 
-            goTostep: '14',
+            goTostep: '13',
             audio: 'ambiance_1'
         },
 
@@ -390,7 +392,8 @@ const App = () => {
                     goTostep: 'f1'
                 },
             ],
-            audio: 'ambiance_2'
+            audio: 'ambiance_2',
+            goTostep: '31'
         },
 
         // RÉPONSE 1
@@ -471,7 +474,7 @@ const App = () => {
                 text: 'o2c1o8.8',
                 speaker: SPEARKER.TABLEAU2_1
             },
-            goTostep: '31',
+            goTostep: '30',
             audio:'ambiance_2'
         },
 
@@ -755,14 +758,14 @@ const App = () => {
 
          // FIN 1
          'i1': {
-            type: 'dialog', background: '4', dialog: {
+            type: 'dialog', background: 'fingoboard', dialog: {
                 text: 'c1n2',
                 speaker: SPEARKER.YOU
             }
         },
         // FIN 2
         'j1': {
-            type: 'dialog', background: '4', dialog: {
+            type: 'dialog', background: 'findied', dialog: {
                 text: 'c2n2',
                 speaker: SPEARKER.YOU
             }
@@ -794,6 +797,12 @@ const App = () => {
         '7': {
             image: require('./assets/plates/têtedroite.png')
         }, 
+        'fingoboard': {
+            video: 'Tueur_25_f'
+        },
+        'findied': {
+            video: 'Fin_lucrece'
+        }
     }), [])
 
     const currentStep = useMemo(() => steps[currentStepID], [currentStepID])
@@ -806,22 +815,24 @@ const App = () => {
             return;
         }
         if (currentStep.type === 'choose' && action.type  === 'choose') {
-            console.log(currentStep.choose[action.choose].goTostep)
+            setChoiseShowed((prevChoiseShowed) => [...prevChoiseShowed, currentStep.choose[action.choose].goTostep])
             setCurrentStepID(currentStep.choose[action.choose].goTostep)
         } else if ( 
             (currentStep.type === 'dialog' && action.type === 'next') ||
             (currentStep.type === 'interact' && action.type === 'interact')
         ) {
-            console.log('Next afet dialog')
             if (currentStep.goTostep) {
-                console.log("goTostep")
-                setCurrentStepID(currentStep.goTostep);
+                const step = steps[currentStep.goTostep];
+                if( step.choose?.every((c) => choiseShowed.includes(c.goTostep)) ) {
+                
+                    setCurrentStepID(step.goTostep);
+                } else {
+                    setCurrentStepID(currentStep.goTostep);
+                }
             } else {
                 const keys = Object.keys(steps);
                 const index = keys.indexOf(currentStepID);
-                console.log("Ci: " + index)
                 const nextStepIndex = index + 1;
-                console.log("Ni: " + nextStepIndex)
                 const nextStep = keys[nextStepIndex];
                 if (nextStep) {
                     setCurrentStepID(nextStep)
@@ -878,9 +889,11 @@ const App = () => {
                     next={next} 
                     backgrounds={backgrounds}
                     volume={volume}
+                    choiseShowed={choiseShowed}
                 />
             ) }
         </div>
+
     )
 }
 
