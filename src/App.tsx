@@ -895,7 +895,9 @@ const App = () => {
     }, [setCurrentStepID])
 
     useEffect(() => {
-        setChoiseShowed([])
+        if (currentStepID === null) {
+            setChoiseShowed([])
+        }
     }, [currentStepID])
 
     console.log("CURRENT: ", currentCursorAction);
